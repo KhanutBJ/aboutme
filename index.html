@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 48px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .portfolio-link {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        .portfolio-link:hover {
+            text-decoration: underline;
+        }
+        /* Navigation Bar Styles */
+        ul.navbar {
+            list-style-type: none;
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        li.nav-item {
+            display: inline;
+            margin-left: 20px;
+        }
+        li.nav-item a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+        li.nav-item a:hover {
+            border-bottom: 2px solid #ff6600;
+        }
+        /* Section Styles */
+        .section {
+            padding-top: 80px;
+            animation: moveInert 1s ease-out;
+        }
+        @keyframes moveInert {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <h2>Web Developer &amp; Designer</h2>
+    </header>
+    <!-- Navigation Bar -->
+    <ul class="navbar">
+        <li class="nav-item"><a href="#home">Home</a></li>
+        <li class="nav-item"><a href="#about">About Me</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- Home Section -->
+    <div class="section" id="home">
+        <div class="container">
+            <p>Hello, and welcome to my portfolio website! I am a web developer and designer with a passion for creating beautiful and functional websites.</p>
+            <p>Feel free to explore my work and projects. If you have any questions or want to collaborate, don't hesitate to <a class="portfolio-link" href="mailto:your-email@example.com">contact me</a>.</p>
+        </div>
+    </div>
+    <!-- About Me Section -->
+    <div class="section" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Here, you can write about yourself, your background, your skills, and your experiences as a web developer and designer.</p>
+        </div>
+    </div>
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Display your projects here with brief descriptions and links to view more details or the live demos.</p>
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>You can provide your contact information, such as your email address or a contact form, to allow visitors to get in touch with you.</p>
+        </div>
+    </div>
+
+    <script>
+        // Custom smooth scroll function
+        function customSmoothScroll(target, duration) {
+            const targetElement = document.getElementById(target);
+            const targetPosition = targetElement.offsetTop - 20;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function scrollAnimation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const scrollAmount = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, scrollAmount);
+                if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
+            }
+
+            // Easing function (Quadratic InOut)
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(scrollAnimation);
+        }
+
+        // Click event handler for smooth scrolling to the sections
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetSectionId = this.getAttribute('href').substring(1);
+                customSmoothScroll(targetSectionId, 1000); // Adjust the duration (in milliseconds) as needed
+            });
+        });
+    </script>
+</body>
+</html>

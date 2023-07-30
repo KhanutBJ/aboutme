@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="khanut, khanutbj, khanut boonjong">
     <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.css">
     <title>KhanutBJ - Portfolio</title>
     <style>
         body {
@@ -18,6 +19,7 @@
         header {
             text-align: center;
             padding: 40px;
+            font-family: 'Fira Code', monospace; /* Use Fira Code font for the header */
         }
         h1 {
             font-size: 48px;
@@ -49,7 +51,7 @@
             padding: 0;
             position: fixed;
             top: 10px;
-            right: 10px;
+            right: 20px;
         }
         li.nav-item {
             display: inline;
@@ -72,12 +74,100 @@
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
         }
+
+        /* Typing animation style */
+        .typing-text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid #fff;
+            animation: typing 2s steps(30, end);
+        }
+
+        /* Keyframes for typing animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Cursor animation */
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cursor {
+            display: inline-block;
+            vertical-align: middle;
+            height: 1.1em;
+            width: 0.1em;
+            background-color: #fff;
+            animation: blink 1s step-end infinite;
+        }
+        /* Flexbox Container for Image and Header */
+        .header-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            padding: 30px;
+            margin-top: 130px;
+            font-family: 'Fira Code', monospace; /* Use Fira Code font for the header */
+        }
+
+        /* Placeholder Image Styles */
+        .header-image {
+            max-width: 400px; /* Adjust the image size as needed */
+            margin-right: 100px;
+        }
+
+        /* Downward Pointer Styles */
+        .downward-pointer {
+            font-size: 32px;
+            margin-top: 50px; /* Add some space between the header text and the downward pointer */
+            cursor: pointer; /* Change the cursor to a pointer when hovering over the downward pointer */
+            opacity: 0.2;
+        }
+         /* Scroll-to-top Pointer Styles */
+        .scroll-to-top {
+            font-size: 32px;
+            margin-top: 20px;
+            cursor: pointer;
+            opacity: 0.2;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999; /* Ensure the scroll-to-top pointer appears above other elements */
+        }
+        /* Hover effect for the scroll-to-top pointer */
+        .downward-pointer:hover {
+            opacity: 1;
+        }
+        /* Hover effect for the scroll-to-top pointer */
+        .scroll-to-top:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>KhanutBJ</h1>
-        <h2>Medical Student &amp; Developer</h2>
+        <div class="header-container">
+            <!-- Scroll-to-top Pointer -->
+            <div class="scroll-to-top" onclick="customSmoothScroll('top', 1000)">&#8593;</div>
+            <img class="header-image" src="/icon.png" alt="Placeholder Image">
+            <div>
+                <h1>KhanutBJ</h1>
+                <!-- Typing animation to switch between "Medical Student" and "Developer" -->
+                <h2><span id="typing-target"></span><span class="cursor"></span></h2>
+                <!-- Downward Pointer -->
+                <div class="downward-pointer" onclick="customSmoothScroll('home', 1000)">&#8595;</div>
+            </div>
+        </div>
     </header>
     <!-- Navigation Bar -->
     <ul class="navbar">
@@ -116,6 +206,45 @@
     </div>
 
     <script>
+        // Create a temporary element at the top of the page
+        const tempElement = document.createElement('div');
+            tempElement.id = 'top';
+            document.body.insertBefore(tempElement, document.body.firstChild);
+
+        // JavaScript code for the typing animation
+        const typingText = document.getElementById('typing-target');
+        const cursor = document.querySelector('.cursor');
+        const words = ['Medical Student', 'Developer', 'AI Hobbyist', 'Music Enjoyer'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isTyping = true;
+
+        function type() {
+            if (charIndex < words[wordIndex].length) {
+                typingText.textContent += words[wordIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                isTyping = false;
+                setTimeout(erase, 4000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typingText.textContent = words[wordIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 100);
+            } else {
+                isTyping = true;
+                wordIndex++;
+                if (wordIndex >= words.length) wordIndex = 0;
+                setTimeout(type, 500);
+            }
+        }
+
+        type(); // Start the typing animation
+
         // Custom smooth scroll function
         function customSmoothScroll(target, duration) {
             const targetElement = document.getElementById(target);

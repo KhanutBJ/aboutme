@@ -178,7 +178,7 @@
             }
             
              .section#home {
-                margin-top: 200px;
+                margin-top: 300px;
             }
 
         }
@@ -215,7 +215,7 @@
             .scroll-to-top {
                 font-size: 20px;
                 bottom: 5px;
-                right: 5px;
+                right: 20px;
             }
         }
     </style>
@@ -300,7 +300,7 @@
             if (charIndex > 0) {
                 typingText.textContent = words[wordIndex].substring(0, charIndex - 1);
                 charIndex--;
-                setTimeout(erase, 100);
+                setTimeout(erase, 70);
             } else {
                 isTyping = true;
                 wordIndex++;

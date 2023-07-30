@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="khanut, khanutbj, khanut boonjong">
     <link rel="icon" type="image/png" href="/icon.png">
+    <!-- Use Fira Code or any other coding font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.css">
     <title>KhanutBJ - Portfolio</title>
     <style>
@@ -152,6 +153,66 @@
         .scroll-to-top:hover {
             opacity: 1;
         }
+        @media (max-width: 768px) {
+            /* Styles for devices with a maximum width of 768px (e.g., iPad) */
+
+            .header-container {
+                flex-direction: column;
+                margin-top: 80px;
+            }
+
+            .header-image {
+                max-width: 100%; /* Adjust the image size as needed */
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .downward-pointer {
+                margin-top: 20px;
+            }
+
+            .scroll-to-top {
+                font-size: 24px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            /* Styles for devices with a maximum width of 480px (e.g., mobile phones) */
+
+            .header-container {
+                margin-top: 60px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .header-image {
+                max-width: 100%; /* Adjust the image size as needed */
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .downward-pointer {
+                font-size: 28px;
+                margin-top: 10px;
+            }
+
+            .scroll-to-top {
+                font-size: 20px;
+                bottom: 5px;
+                right: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -159,7 +220,7 @@
         <div class="header-container">
             <!-- Scroll-to-top Pointer -->
             <div class="scroll-to-top" onclick="customSmoothScroll('top', 1000)">&#8593;</div>
-            <img class="header-image" src="/icon.png" alt="Placeholder Image">
+            <img class="header-image" src="https://khanutbj.xyz/icon.png" alt="Placeholder Image">
             <div>
                 <h1>KhanutBJ</h1>
                 <!-- Typing animation to switch between "Medical Student" and "Developer" -->

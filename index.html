@@ -15,7 +15,6 @@
             font-family: 'Fira Code', monospace;
             margin: 0;
             padding: 0;
-            opacity: 0.6;
             background-image: url(background.jpg); 
             animation: animateBackground 50s linear infinite;
             --background-layer-opacity: 0; 
@@ -431,7 +430,7 @@
     </div>
     <br><br>
     <p style="text-align: center; font-size: 15px">© 2023 KhanutBJ. All rights reserved.</p>
-    <div class="background-layer"></div>
+    <div class="background-layer" style="--background-layer-opacity: 0.6;"></div>
     <script>
         // Create a temporary element at the top of the page
         const tempElement = document.createElement('div');

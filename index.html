@@ -461,6 +461,12 @@
             body.style.setProperty('--background-layer-opacity', opacity);
         });
 
+        // Set the initial opacity on page load (adjust as needed)
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const initialOpacity = 0.6; // Adjust this value to set the initial opacity (between 0 and 1)
+            body.style.setProperty('--background-layer-opacity', initialOpacity);
+        });
 
         // JavaScript code for the typing animation
         const typingText = document.getElementById('typing-target');

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="vbbv5oQnUiR6-jOKiOsz9X6nK1WfxGASyErPeqY_phU" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="khanut, khanutbj, khanut boonjong">
-    <link rel="icon" type="image/png" href="/icon.png">
+    <meta name="keywords" content="khanut, khanutbj, khanut bj, khanut boonjong">
+    <link rel="icon" type="image/png" href="/icon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.css">
-    <title>KhanutBJ - Portfolio</title>
+    <title>KhanutBJ - Profile</title>
     <style>
         body {
             background-color: #080814;
@@ -15,11 +15,35 @@
             font-family: 'Fira Code', monospace;
             margin: 0;
             padding: 0;
+            background-image: url(background.jpg); 
+            animation: animateBackground 50s linear infinite;
+            --background-layer-opacity: 0; 
+        }
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #080814;
+            opacity: var(--background-layer-opacity);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Keyframes for the background animation */
+        @keyframes animateBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
         }
         header {
             text-align: center;
             padding: 40px;
-            font-family: 'Fira Code', monospace; /* Use Fira Code font for the header */
+            font-family: 'Fira Code', monospace; 
         }
         h1 {
             font-size: 48px;
@@ -46,20 +70,20 @@
         /* Navigation Bar Styles */
         ul.navbar {
             list-style-type: none;
-            background-color: rgba(0, 0, 0, 0.3); /* Add a transparent background with some opacity */
-            backdrop-filter: blur(8px); /* Apply the blur effect to the background */
+            background-color: rgba(0, 0, 0, 0.3); 
+            backdrop-filter: blur(8px); 
             margin: 0;
             padding: 0;
             position: fixed;
-            top: 10px; /* Adjust the top value to provide some space between the navigation bar and the top of the page */
-            left: 50%; /* Position the navigation bar at the center horizontally */
-            transform: translateX(-50%); /* Center the navigation bar horizontally */
+            top: 10px; 
+            left: 50%; 
+            transform: translateX(-50%); 
             display: flex;
-            justify-content: center; /* Center the navigation links horizontally */
-            align-items: center; /* Center the navigation links vertically */
-            height: 40px; /* Set the height of the navigation bar */
-            z-index: 999; /* Ensure the navigation bar appears above other elements */
-            border-radius: 45px; /* Add rounded corners to all corners */
+            justify-content: center; 
+            align-items: center; 
+            height: 40px;
+            z-index: 999; 
+            border-radius: 45px; 
         }
         
         li.nav-item {
@@ -124,26 +148,26 @@
         .header-container {
             display: flex;
             flex-direction: row;
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
+            justify-content: center; 
+            align-items: center; 
             padding: 30px;
             margin-top: 150px;
             margin-bottom: 200px;
-            font-family: 'Fira Code', monospace; /* Use Fira Code font for the header */
+            font-family: 'Fira Code', monospace; 
             animation: moveInert 1s ease-out;
         }
 
         /* Placeholder Image Styles */
         .header-image {
-            max-width: 400px; /* Adjust the image size as needed */
+            max-width: 400px; 
             margin-right: 100px;
         }
 
         /* Downward Pointer Styles */
         .downward-pointer {
             font-size: 32px;
-            margin-top: 50px; /* Add some space between the header text and the downward pointer */
-            cursor: pointer; /* Change the cursor to a pointer when hovering over the downward pointer */
+            margin-top: 50px; 
+            cursor: pointer; 
             opacity: 0.2;
         }
          /* Scroll-to-top Pointer Styles */
@@ -155,8 +179,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 999; /* Ensure the scroll-to-top pointer appears above other elements */
         }
+
         /* Hover effect for the scroll-to-top pointer */
         .downward-pointer:hover {
             opacity: 1;
@@ -168,7 +192,6 @@
         
         @media only screen and (max-width: 1024px) {
             /* Styles for devices with a maximum width of 768px (e.g., iPad) */
-
             .header-container {
                 flex-direction: column;
                 margin-top: 150px;
@@ -244,14 +267,46 @@
             border-bottom: 2px solid transparent;
             }
         }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+
+        .skill {
+            text-align: center;
+            margin: 8px;
+            width: 100px;
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #FFFFFF;
+            transition: transform 0.3s ease ;
+        }
+
+        .contact:hover {
+            transform: scale(1.1);
+        }
+
     </style>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 <body>
     <header>
         <div class="scroll-to-top" onclick="customSmoothScroll('top', 1000)">&#8593;</div>
         <div class="header-container">
             <!-- Scroll-to-top Pointer -->
-            <img class="header-image" src="https://khanutbj.xyz/icon.png" alt="Placeholder Image">
+            <img class="header-image" src="icon.jpg" alt="Placeholder Image">
             <div>
                 <h1>KhanutBJ</h1>
                 <!-- Typing animation to switch between "Medical Student" and "Developer" -->
@@ -271,21 +326,73 @@
     <!-- Home Section -->
     <div class="section" id="home">
         <div class="container">
-            <p>Hello there! Thx for checking out my site. In return, I got this for you ---> <a class="portfolio-link" href="https://bit.ly/3BlS71b">welcome gift</a>!
+            <p>Hello there! Thanks for visiting my site. In return, I have this little cute thing for you ---> <a class="portfolio-link" href="https://bit.ly/3BlS71b">welcome gift</a>!
             <p>I am a full-time neuro/med enthusiast (surely since I'm a med student) and also a part-time dev wannabe :)</p>
-            <p>Feel free to explore my works. Got any questions or want to team up on something cool? Just give me a shout — I'm <a class="portfolio-link" href="mailto:ckbj2016@gmail.com">here</a> and ready to chat!</p>
+            <p>Feel free to explore my works. And if you have any questions or want to team up on something cool, just give me a shout — I'm <a class="portfolio-link" href="https://discordapp.com/users/473486284741148672">here</a> and ready to chat!</p>
         </div>
     </div>
     <!-- About Me Section -->
     <div class="section" id="about">
         <div class="container">
-            <h2>About Me (Beta version) </h2>
-            <p>I'm a medical student with a deep passion for neuroscience, biomedical informatics, and artificial intelligence. To me, the magic happens when these three incredible fields come together. They hold the key to unlocking the mysteries of both the human mind and groundbreaking technology! I just want to try out how powerful this convergence can be! I'm convinced that the brain still holds many secrets waiting to be uncovered. Those discoveries can revolutionize AI, just like the game-changing neural nets did back in the 1940s.</p>
+            <h2>About Me</h2>
+            <p>I'm a medical student with a deep passion for all things neuroscience, biomedical informatics, and artificial intelligence 🔥<br><br>My goal? Understanding the brain, its intricate workings, and finding ways to tackle its challenges — brain diseases. 🧠<br><br>Other than immersing myself into medical textbooks, I find great joy in learning coding 💻  and tech stuff that prove invaluable in dealing with the complexities of biomedical data<br><br>I believe that the brain still holds many secrets waiting to be unraveled. Solving these enigmas has the potential to revolutionize AI, just like the game-changing neural nets did back in the '40s! 🚀</p>
             <p>--</p>
-            <p>I know: Python, HTML, CSS, JS</p>
-            <p>I'm familiar with : Pytorch, Tensorflow, Pandas, Numpy, Scipy</p>
-            <p>I can use: API, Cloud, Vector database </p>
-            <p>My tech interests: LLM, Quantization, Vector Semantic Search, Liquid/Explainable Neural Nets</p>
+            <h3>Skills</h3>
+            <div class="skills-container">
+                <p>Languages</p>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:python" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Python</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:html5" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">HTML</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:css3" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">CSS</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:javascript" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">JavaScript</p>
+                </div>
+            </div>
+
+            <div class="skills-container">
+                <p>Libraries</p>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:numpy" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Numpy</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:pandas" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Pandas</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:scipy" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Scipy</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:pytorch" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Pytorch</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:tensorflow" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Tensorflow</p>
+                </div>
+                <div class="skill">
+                    <span class="iconify" data-icon="simple-icons:scikit-learn" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px; white-space: nowrap;">Scikit-learn</p>
+                </div>
+            </div>
+            <p>I can also use: Flask, API, Cloud, Vector database, etc. </p>
+            <br>
+            <span class="iconify" data-icon="fluent:window-dev-tools-24-regular" style="margin-left: -7px;font-size: 40px;"></span>  
+            <p>My tech interests include <br>1. LLM<br>2. Vector Semantic Search<br>3. Liquid Neural Nets<br>4. Computaional neuroscience<br>5. Wearable device and biomedical signal processing</p>
+            <span class="iconify" data-icon="iconoir:brain" style="margin-left: -7px;font-size: 40px;"></span>
+            <p>My medical interests include <br>1. Neurology<br>2. Sleep medicine<br>3. Migraine<br>4. Neurodegenerative diseases<br>5. <em>C. elegans</em> in biomedical research</p>
+            <p>--</p>
+            <h3>Location</h3>
             <p>Based in BKK, Thailand</p>
         </div>
     </div>
@@ -300,15 +407,60 @@
     <div class="section" id="contact">
         <div class="container">
             <h2>Contact</h2>
-            <p>TBA</p>
+            <br>
+            <div class="contact-container">
+                <a class="contact" href="https://www.linkedin.com/in/khanut-boonjong-448868222">
+                    <span class="iconify" data-icon="simple-icons:linkedin" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">LinkedIn</p>
+                </a>
+                <a class="contact" href="https://github.com/KhanutBJ">
+                    <span class="iconify" data-icon="simple-icons:github" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Github</p>
+                </a>
+                <a class="contact" href="https://discordapp.com/users/473486284741148672">
+                    <span class="iconify" data-icon="simple-icons:discord" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Discord</p>
+                </a>
+                <a class="contact" href="mailto:ckbj2016@gmail.com">
+                    <span class="iconify" data-icon="ic:baseline-email" style="font-size: 30px;"></span>
+                    <p style="font-size: 16px;">Email</p>
+                </a>
+            </div>
         </div>
     </div>
-
+    <br><br>
+    <p style="text-align: center; font-size: 15px">© 2023 KhanutBJ. All rights reserved.</p>
+    <div class="background-layer"></div>
     <script>
         // Create a temporary element at the top of the page
         const tempElement = document.createElement('div');
             tempElement.id = 'top';
             document.body.insertBefore(tempElement, document.body.firstChild);
+
+        // JavaScript code to handle the background change on scroll
+        window.addEventListener("scroll", function() {
+            const homeSection = document.getElementById("home");
+            const scrollY = window.scrollY;
+            const homeSectionTop = homeSection.offsetTop;
+            const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+            const body = document.body;
+
+            // Calculate the percentage of scroll progress within the home section
+            let scrollProgress = 0;
+            if (scrollY >= homeSectionTop) {
+                scrollProgress = Math.min(1, (scrollY - homeSectionTop) / (homeSectionBottom - homeSectionTop));
+            }
+
+            // Update the opacity based on the scroll progress
+            const maxOpacity = 0.9; // Adjust this value to control the maximum opacity
+            const minOpacity = 0.6; // Adjust this value to control the minimum opacity
+            const opacityRange = maxOpacity - minOpacity;
+            const opacity = minOpacity + opacityRange * scrollProgress;
+
+            // Set the opacity to the custom CSS variable
+            body.style.setProperty('--background-layer-opacity', opacity);
+        });
+
 
         // JavaScript code for the typing animation
         const typingText = document.getElementById('typing-target');
@@ -376,7 +528,7 @@
             link.addEventListener('click', function (event) {
                 event.preventDefault();
                 const targetSectionId = this.getAttribute('href').substring(1);
-                customSmoothScroll(targetSectionId, 1000); // Adjust the duration (in milliseconds) as needed
+                customSmoothScroll(targetSectionId, 1000); 
             });
         });
     </script>

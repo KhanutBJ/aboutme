@@ -752,7 +752,7 @@ nav {
     }
 
     .details img {
-        transform: translate(0%, 100%);
+        transform: translate(-10%, 100%);
     }
 
     .bio-container {
@@ -779,7 +779,7 @@ nav {
     }
 
     .details img {
-        transform: translate(0%, 100%);
+        transform: translate(-10%, 100%);
     }
 
     .bio-container {

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhanutBJ - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.css">
+    <link rel="icon" type="image/png" href="/icon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="main-styles.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+<body>
+    <!-- <nav>
+        <ul>
+            <tt>
+                <h3>KhanutBJ</h3>
+            </tt>
+            <li><a href="#about">Bio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav> -->
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h3>KhanutBJ</h3>
+            </div>
+            <ul>
+                <li><a href="#about">Bio</a></li>
+                <li><a href="#blog">Blogs</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#skills">Background</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="mode-toggle" class="mode-toggle">
+                    <span class="iconify sun-icon" data-icon="ri:sun-fill" style="font-size: 25px; display: none;"></span>
+                    <span class="iconify moon-icon" data-icon="ri:moon-fill" style="font-size: 25px;"></span>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+
+    <div class="background-layer"></div>
+    <header>
+        <div class="profile">
+            <div class="welcome-section">
+                <p>01 Welcome</p>
+                <!-- <a href="#">Home</a> -->
+                <!-- <h2>Inventing<br>What's Next</h2> -->
+            </div>
+            <div class="hero">
+                <h1 class="highlight">Solving<br>Analog <br>and Digital</h1>
+                <img src="logo4.png"Graphic">
+                <a href="#blog">What've been done so far →</a>
+                <p>Bringing the benefits of both worlds to drive progress for all.</p>
+            </div>
+            <div class="welcome-section">
+                <p>02 Profile</p>
+            </div>
+            <h1>Khanut Boonjong</h1>
+            <div class="details">
+                <div class="title">
+                    <h3>Title</h3>
+                    <p>Medical & Engineering Student</p>
+                </div>
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Bangkok, Thailand</p>
+                </div>
+                <img src="icon.png" alt="Profile Picture" class="profile-pic">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="quote-container">
+            <p class="quote-text">"Learning curve is never a problem as long as the it offers insights."</p>
+            <p class="quote-author">An Outlook</p>
+        </div>
+
+        <div class="bio-container" id="about">
+            <div class="bio">
+                <h3>Bio</h3>
+                <br>
+                <p> Building is my passion - I like to identify gaps, invent solutions to bridge them, and implement them to create real change. It excites me to learn cutting-edge technologies and innovative concepts. I enjoy coding and experimenting with ideas. New technology is never a barrier to take on a new challenge. 
+                    <br><br> Graduated from a STEM high school with experience in deep learning and basic science research. Along the way, I have built skills in signal processing and various technology stacks. Now, I'm studying Medicine and Engineering to learn what they offer to solve and inspire.
+                    I have worked on several projects aimed at bridging technology gaps to benefit health. I believe AI will benefit medicine, and understanding related fields like neuroscience may offers insights for building efficient AI systems, creating a reciprocal relationship that drives innovation.</p>
+            </div>
+            <div class="topics">
+                <h3>Topics</h3>
+                <br>
+                <div class="topic-tags">
+                    <span class="topic-tag">Medicine</span>
+                    <span class="topic-tag">Neuroscience</span>
+                    <span class="topic-tag">Technology</span>
+                    <span class="topic-tag">AI</span>
+                    <span class="topic-tag">Research</span>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- ###################################################################################### -->
+
+
+        <div class="blog-container" id="blog">
+            <h2 style="text-align:center;">Blogs</h2>
+
+            <div class="blog-entry">
+                <a href="/blog/1.html" class="blog-title">A Cloud Solution for Personalized Object Recognition</a>
+                <p class="blog-date">June 17, 2024</p>
+                <div class="blog-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Cloud</span>
+                    <span class="tag">Azure</span>
+                    <span class="tag">Accessibility</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+            </div>
+
+            <div class="blog-entry">
+                <a href="/blog/2.html" class="blog-title">Daily Brainy: A Fully-automated Neuroscience Content Creator</a>
+                <p class="blog-date">June 15, 2024</p>
+                <div class="blog-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">LLM</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+            </div>
+
+            <div class="blog-entry">
+                <a href="/blog/2.html" class="blog-title">Prince Mahidol Award Conference 2024</a>
+                <p class="blog-date">June 15, 2024</p>
+                <div class="blog-tags">
+                    <span class="tag">Medicine</span>
+                    <span class="tag">Global Health</span>
+                    <span class="tag">Digital Health</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+            </div>
+
+             <!-- ###################################################################################### -->
+
+            <div class="hidden-blogs">
+                <!-- Additional blog entries go here -->
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/3.html" class="blog-title">Another Blog Title</a>
+                    <p class="blog-date">June 13, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag1</span>
+                        <span class="tag">Tag2</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/4.html" class="blog-title">Yet Another Blog Title</a>
+                    <p class="blog-date">June 12, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag3</span>
+                        <span class="tag">Tag4</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">More Blogs Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">More Blogs Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">More Blogs Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">More Blogs Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">more blog Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">more blog Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">more blog Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+
+                <div class="blog-entry" style="display: none;">
+                    <a href="/blog/5.html" class="blog-title">last blog Here</a>
+                    <p class="blog-date">June 11, 2024</p>
+                    <div class="blog-tags">
+                        <span class="tag">Tag5</span>
+                        <span class="tag">Tag6</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero...</p>
+                </div>
+                <!-- Add more blog entries as needed --> 
+            </div>
+        
+            <button id="view-more-btn" style="display: block; margin: 20px auto;">View More →</button>
+            <button id="view-all-btn" style="display: block; margin: 20px auto;">View All →</button>
+            <button id="collapse-btn" style="display: none; margin: 20px auto;">Collapse</button>
+
+        </div>
+
+
+         <!-- ###################################################################################### -->
+
+
+        <div class="project-container" id="project">
+            <h2 style="text-align:center;">Projects</h2>
+        
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-type">Release</div>
+                    <img src="background.jpg" alt="Project Image 2" class="project-image">
+                    <h3 class="project-title">Optimize quantum circuits with AI-powered transpiler...</h3>
+                    <p class="project-date">28 May 2024</p>
+                    <p class="project-info">David Kremer, Juan Cruz Benito, Ismael Faro, and Robert Davis</p>
+                    <a href="/blog/1.html">Read more →</a>
+                    <div class="project-tags">
+                        <span class="tag">Quantum Enablement</span>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <div class="project-type">Release</div>
+                    <img src="background.jpg" alt="Project Image 2" class="project-image">
+                    <h3 class="project-title">Optimize quantum circuits with AI-powered transpiler...</h3>
+                    <p class="project-date">28 May 2024</p>
+                    <p class="project-info">David Kremer, Juan Cruz Benito, Ismael Faro, and Robert Davis</p>
+                    <a href="/blog/1.html">Read more →</a>
+                    <div class="project-tags">
+                        <span class="tag">Quantum Enablement</span>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <div class="project-type">Release</div>
+                    <img src="background.jpg" alt="Project Image 2" class="project-image">
+                    <h3 class="project-title">Optimize quantum circuits with AI-powered transpiler...</h3>
+                    <p class="project-date">28 May 2024</p>
+                    <p class="project-info">David Kremer, Juan Cruz Benito, Ismael Faro, and Robert Davis</p>
+                    <a href="/blog/1.html">Read more →</a>
+                    <div class="project-tags">
+                        <span class="tag">Quantum Enablement</span>
+                    </div>
+                </div>
+    
+                <div class="project-card">
+                    <div class="project-type">Release</div>
+                    <img src="background.jpg" alt="Project Image 2" class="project-image">
+                    <h3 class="project-title">Optimize quantum circuits with AI-powered transpiler...</h3>
+                    <p class="project-date">28 May 2024</p>
+                    <p class="project-info">David Kremer, Juan Cruz Benito, Ismael Faro, and Robert Davis</p>
+                    <a href="/blog/1.html">Read more →</a>
+                    <div class="project-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">AI Transparency</span>
+                        <span class="tag">Granite</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+        <!-- ###################################################################################### -->
+        
+
+        <div class="skills" id="skills">
+            <h2>Tools</h2>
+            <span class="skill">Python</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Flask</span>
+            <span class="skill">Cloud</span>
+            <span class="skill">ML/DL</span>
+        </div>
+
+        <div class="interests" id="interests">
+            <h2>Research Interests</h2>
+            <span class="interest">Computational Neuroscience</span>
+            <span class="interest">Neuromorphic Computing</span>
+            <span class="interest">Biomedical Signal Processing</span>
+            <span class="interest">Wearable Devices</span>
+        </div>
+
+        <div class="interests" id="interests">
+            <h2>Medical Interests</h2>
+            <span class="interest">Neurology</span>
+            <span class="interest">Sleep Medicine</span>
+            <span class="interest">Migraine</span>
+            <span class="interest">Psychiatry</span>
+        </div>
+
+        <div class="education">
+            <h2 class="section-title">Education</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <p class="section-content">Doctor of Medicine / Master of Engineering (M.D.- M.Eng.) - Faculty of Medicine Ramathibodi Hospital, Mahidol University, Thailand (2023 - present)</p>
+                </div>
+                <div class="roadmap-item">
+                    <p class="section-content">High School Diploma - Kamnoetvidya Science Academy, Thailand (2020 - 2023)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Awards">
+            <h2 class="section-title">Awards</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <p class="section-content"> Finalist, Microsoft AI for Accessibility - Microsoft, Thailand (2024)</p>
+                </div>
+                <div class="roadmap-item">
+                    <p class="section-content"> First Place Winner, Brain Hackathon - KMUTT, Thailand (2024)</p>
+                </div>
+                <div class="roadmap-item">
+                    <p class="section-content"> First Runner-up, Poster Award, Asian Science Camp - IBS Insitute for Basic Science, Korea (2022)</p>
+                </div>
+                <div class="roadmap-item">
+                    <p class="section-content"> Silver Medal, 18th Thailand Biology Olympiad - POSN, Thailand (2021)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate">
+            <h2 class="section-title">Certificates</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <p class="section-content">Graduate of Brain Code Camp - PMU-B | Chula | KMUTT, Thailand (2023)</p>
+                </div>
+                <div class="roadmap-item">
+                    <p class="section-content">Graduate of AI Builders - VISTEC/VISAI | Central Retail Digital, Thailand (2022)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="contact-container">
+            <a class="contact" href="mailto:ckbj2016@gmail.com">
+                <span class="iconify" data-icon="ic:baseline-email" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">Email</p>
+            </a>
+            <a class="contact" href="https://www.linkedin.com/in/khanut-boonjong-448868222">
+                <span class="iconify" data-icon="simple-icons:linkedin" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">LinkedIn</p>
+            </a>
+            <a class="contact" href="https://discordapp.com/users/473486284741148672">
+                <span class="iconify" data-icon="simple-icons:discord" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">Discord</p>
+            </a>
+            <a class="contact" href="https://www.instagram.com/khanutbj/">
+                <span class="iconify" data-icon="ri:instagram-line" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">Instagram</p>
+            </a>
+            <a class="contact" href="https://github.com/KhanutBJ">
+                <span class="iconify" data-icon="simple-icons:github" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">Github</p>
+            </a>
+            <a class="contact" href="https://medium.com/@vwgprvvtsf">
+                <span class="iconify" data-icon="ri:medium-fill" style="font-size: 30px;"></span>
+                <p style="font-size: 16px;">Medium</p>
+            </a>
+        </div>
+        <p class="footer-note">© 2023 KhanutBJ. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // adjust to desired offset
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for floating up elements
+        const faders = document.querySelectorAll('.profile, .blog-entry, .skills, .interests, .about-me, .additional-content, .contact-container, .quote-container, .bio-container, .roadmap');
+        const appearOptions = {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.style.animation = `floatUp 1s ease-out forwards`;
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        document.getElementById('view-more-btn').addEventListener('click', function () {
+            const hiddenBlogs = document.querySelectorAll('.hidden-blogs .blog-entry');
+            let revealedCount = 0;
+
+            for (let i = 0; i < hiddenBlogs.length; i++) {
+                if (hiddenBlogs[i].style.display === 'none' && revealedCount < 3) {
+                    hiddenBlogs[i].style.display = 'block';
+                    revealedCount++;
+                }
+            }
+
+            if (revealedCount < 3) {
+                this.style.display = 'none';
+            }
+
+            document.getElementById('collapse-btn').style.display = 'block';
+        });
+
+        document.getElementById('view-all-btn').addEventListener('click', function () {
+            const hiddenBlogs = document.querySelectorAll('.hidden-blogs .blog-entry');
+
+            for (let i = 0; i < hiddenBlogs.length; i++) {
+                if (hiddenBlogs[i].style.display === 'none') {
+                    hiddenBlogs[i].style.display = 'block';
+                }
+            }
+            document.getElementById('view-more-btn').style.display = 'none';
+            document.getElementById('view-all-btn').style.display = 'none';
+            document.getElementById('collapse-btn').style.display = 'block';
+        });
+
+        document.getElementById('collapse-btn').addEventListener('click', function () {
+            const hiddenBlogs = document.querySelectorAll('.hidden-blogs .blog-entry');
+            hiddenBlogs.forEach(blog => {
+                blog.style.display = 'none';
+            });
+
+            document.getElementById('view-more-btn').style.display = 'block';
+            document.getElementById('view-all-btn').style.display = 'block';
+            this.style.display = 'none';
+            window.scrollTo({
+                    top: document.getElementById('blog').offsetTop - 50, 
+                    behavior: 'smooth'
+                });
+        });
+
+        document.getElementById('mode-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const sunIcon = this.querySelector('.sun-icon');
+            const moonIcon = this.querySelector('.moon-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        });
+
+    </script>
+</body>
+</html>

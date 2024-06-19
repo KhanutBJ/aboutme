@@ -779,7 +779,7 @@ nav {
     }
 
     .details img {
-        transform: translate(100%, -50%);
+        transform: translate(50%, 50%);
     }
 
     .bio-container {

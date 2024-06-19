@@ -746,10 +746,6 @@ nav {
 
 /* Media Queries for Horizontal Orientation (Landscape) */
 @media (max-height: 480px) and (orientation: landscape) {
-    .contact-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
 
     .details img {
         transform: translate(-10%, 100%);
@@ -773,10 +769,6 @@ nav {
 }
 
 @media (max-height: 768px) and (orientation: landscape) {
-    .contact-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
 
     .details img {
         transform: translate(-10%, 100%);
@@ -797,4 +789,18 @@ nav {
         padding-top: 50px;
     }
 
+}
+
+/* Media Queries for iPad and similar devices in portrait orientation */
+@media (max-width: 820px) and (orientation: portrait) {
+    .details img {
+        transform: translate(-10%, 100%);
+    }
+}
+
+/* Media Queries for iPad and similar devices in landscape orientation */
+@media (max-height: 1180px) and (orientation: landscape) {
+    .details img {
+        transform: translate(-10%, 50%);
+    }
 }

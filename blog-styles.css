@@ -1,0 +1,227 @@
+:root {
+    --top-color: #e0f7fa;
+    --background-color: #ffffff;
+    --text-color: #2a2a2a;
+    --link-color: #0f62fe;
+    --link-hover-color: #0056b3;
+    --nav-background: #e0f7fa66;
+    --card-background: #ffffff;
+    --footer-background: #393939;
+    --footer-text-color: #ffffff;
+    --quote-bg: #f4f7fb;
+    --tag-bg:  #e0f7e0;
+    --tag-hover-bg: #0f62fe;
+    --tag-hover-color: #ffffff;
+    --highlight-color: #ffffff;
+    --meta-color: #555;
+    --green-text: #007e33;
+}
+
+body.dark-mode {
+    --top-color: #393939;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --link-color: #78a9ff;
+    --link-hover-color: #a6c8ff;
+    --nav-background: #21212166;
+    --card-background: #262626;
+    --footer-background: #161616;
+    --footer-text-color: #eeeeee;
+    --quote-bg: #262626;
+    --tag-bg: #393939;
+    --tag-hover-bg: #78a9ff;
+    --tag-hover-color: #ffffff;
+    --highlight-color: #78a9ff;
+    --meta-color: #ffffff;
+    --green-text: #ffffff;
+}
+
+body {
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h3 {
+    font-size: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400px;
+    padding: 5px 10px;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid var(--link-color);
+}
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.blog-post {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 200px;
+    padding-right: 70px;
+}
+
+.meta-info {
+    font-size: 0.9em;
+    color: var(--meta-color);
+}
+
+.meta-item {
+    margin-bottom: 60px;
+    margin-top: 7px;
+    border-top: 1.5px solid var(--text-color);
+}
+
+.meta-item h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.author {
+    background-color: #d0e1ff;
+    color: var(--link-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+.topic {
+    background-color: var(--tag-bg);
+    color: var(--green-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.topic:hover {
+    background-color: var(--tag-hover-bg);
+    color: var(--tag-hover-color);
+}
+
+.content {
+    flex: 3;
+    padding-left: 20px;
+    margin-top: 7px;
+    border-top: 1.5px solid var(--text-color);
+}
+
+.post-header {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    max-width: 60%;
+}
+
+.post-header h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.post-header p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.post-category {
+    color: var(--meta-color);
+    font-size: 1.2em;
+}
+
+.post-read-time {
+    font-size: 1.2em;
+    color: var(--meta-color);
+}
+
+.post-body {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 70%;
+    justify-content: normal;
+}
+
+.post-image,
+.video-placeholder iframe {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

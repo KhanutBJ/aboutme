@@ -752,7 +752,7 @@ nav {
     }
 
     .details img {
-        transform: translate(0%, -50%);
+        transform: translate(0%, -100%);
     }
 
     .bio-container {

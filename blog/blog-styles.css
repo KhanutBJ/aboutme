@@ -49,8 +49,8 @@ header {
     background-color: var(--card-background);
     border-bottom: 1px solid #e0e0e0;
     padding: 1px 0;
-    width: 100%; /* Ensure header takes full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .header-container {
@@ -58,18 +58,17 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
     padding: 0 20px;
-    width: 100%; /* Ensure container takes full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 nav {
     flex: 1;
     display: flex;
     justify-content: flex-end; /* Align nav items to the right */
-    width: 100%; /* Ensure nav takes full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 nav ul {
@@ -77,9 +76,9 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Align items vertically */
-    width: auto; /* Ensure ul takes full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    align-items: center;
+    width: auto; 
+    box-sizing: border-box; 
 }
 
 nav ul li, nav ul span {
@@ -252,7 +251,7 @@ footer {
 
     .post-header, .post-body {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
         padding: 0 10px;
     }
 
@@ -277,7 +276,7 @@ footer {
 
     .post-header, .post-body {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
         padding: 0 10px;
     }
 
@@ -302,7 +301,7 @@ footer {
 
     .post-header, .post-body {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
         padding: 0 10px;
     }
 
@@ -327,7 +326,7 @@ footer {
 
     .post-header, .post-body {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
         padding: 0 10px;
     }
 
@@ -352,7 +351,7 @@ footer {
 
     .post-header, .post-body {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
         padding: 0 10px;
     }
 

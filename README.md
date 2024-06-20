@@ -1,3 +1,3 @@
-## Personal Webpage ##
+# Personal Webpage #
 
-# khanutbj.xyz
+ /khanutbj.xyz/

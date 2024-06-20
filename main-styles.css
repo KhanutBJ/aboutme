@@ -564,6 +564,8 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .nav-container {
@@ -573,7 +575,8 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* flex-wrap: wrap; */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .logo h3 {
@@ -589,12 +592,13 @@ nav {
     padding: 0;
     flex-wrap: wrap;
     justify-content: flex-end;
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .nav-container ul li {
     margin: 0 15px;
     display: flex;
-    /* flex-wrap: wrap; */
 }
 
 .nav-container ul li a {
@@ -607,6 +611,10 @@ nav {
 
 .nav-container ul li a:hover {
     border-bottom: 2px solid var(--link-color);
+}
+
+.nav-container ul li, .nav-container ul span {
+    margin: 0 10px;
 }
 
 .quote-container {
@@ -661,6 +669,11 @@ nav {
         padding-top: 150px;
     }
 
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 
@@ -677,6 +690,11 @@ nav {
 
     .welcome-section {
         padding-top: 200px;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .details img {
@@ -717,6 +735,11 @@ nav {
 
     .welcome-section p {
         transform: translateX(-12%);
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .hero {
@@ -763,7 +786,7 @@ nav {
     }
 
     .logo h3 {
-        font-size: 10px;
+        font-size: 15px;
         padding-right: 30px;
     }
 

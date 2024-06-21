@@ -757,7 +757,7 @@ nav {
     }
     
     .details img {
-        transform: translate(-10%, 70%);
+        transform: translate(-100%, 70%);
     }
 }
 
@@ -938,8 +938,13 @@ nav {
 
 @media (max-width: 912px) and (orientation: portrait) {
 
+    .welcome-section {
+        padding-top: 200px;
+        /* padding-bottom: 100px; */
+    }
+
     .details img {
-        transform: translate(0%, 100%);
+        transform: translate(-10%, 100%);
     }
 
 }

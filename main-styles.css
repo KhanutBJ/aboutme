@@ -161,11 +161,12 @@ a:hover {
 }
 
 .blog-container {
+    /* width: 100%; */
     padding: 10px;
     flex-wrap: wrap;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
 }
 
 .blog-entry {
@@ -284,8 +285,10 @@ a:hover {
     margin-bottom: 40px;
     opacity: 0;
     transform: translateY(20px);
-    flex-wrap: wrap;
-    /* align-items: center; */
+    padding-left: 10px;
+    padding-right: 10px;
+    /* flex-wrap: wrap;
+    align-items: center; */
 }
 
 .bio {
@@ -455,6 +458,7 @@ a:hover {
     font-size: 16px;
     margin: 5px 0 0;
     color: var(--text-color);
+    /* color: #808080; */
 }
 
 button {

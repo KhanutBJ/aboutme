@@ -99,7 +99,7 @@ nav ul li a:hover, nav ul span:hover {
 
 .breadcrumb {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 20px 0px;
     padding: 0 20px;
     color: #555;
     font-size: 0.9em;
@@ -123,6 +123,7 @@ nav ul li a:hover, nav ul span:hover {
 
 .sidebar {
     flex: 1;
+    max-width: 200px;
     padding-right: 70px;
 }
 

@@ -1,0 +1,73 @@
+[
+    {
+        "type": "Hackathon",
+        "image": "background.jpg",
+        "title": "Personalized Object Recognition",
+        "date": "13 June 2024",
+        "info": "Azure cloud web app which allows a user to teach and recognize any personal objects using CLIP and vector search.",
+        "link": "/blog/ms-hack.html",
+        "tags": ["Azure", "Flask", "Object recognition", "CLIP", "Vector search"],
+        "hidden": false
+    },
+    {
+        "type": "Summer school",
+        "image": "background.jpg",
+        "title": "Scalable Open-vocabulary Imagined Speech BCI System",
+        "date": "2 Feb 2024",
+        "info": "Contrastive representation learning for better mapping EEG embedding of imagined speech",
+        "link": "/blog/brain-hack.html",
+        "tags": ["Neuroscience", "EEG", "Contrastive learning", "Autoencoder", "Vector search"],
+        "hidden": false
+    },
+    {
+        "type": "Release",
+        "image": "background.jpg",
+        "title": "TBA",
+        "date": "TBA",
+        "info": "TBA",
+        "link": "/blog/1.html",
+        "tags": ["TBA"],
+        "hidden": true
+    },
+    {
+        "type": "Release",
+        "image": "background.jpg",
+        "title": "TBA",
+        "date": "TBA",
+        "info": "TBA",
+        "link": "/blog/1.html",
+        "tags": ["TBA"],
+        "hidden": true
+    },
+    {
+        "type": "Release",
+        "image": "background.jpg",
+        "title": "TBA",
+        "date": "TBA",
+        "info": "TBA",
+        "link": "/blog/1.html",
+        "tags": ["TBA"],
+        "hidden": true
+    },
+    {
+        "type": "Release",
+        "image": "background.jpg",
+        "title": "TBA",
+        "date": "TBA",
+        "info": "TBA",
+        "link": "/blog/1.html",
+        "tags": ["TBA"],
+        "hidden": true
+    },
+    {
+        "type": "Release",
+        "image": "background.jpg",
+        "title": "TBA",
+        "date": "TBA",
+        "info": "TBA",
+        "link": "/blog/1.html",
+        "tags": ["TBA"],
+        "hidden": true
+    }
+
+]

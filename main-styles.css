@@ -163,6 +163,9 @@ a:hover {
 .blog-container {
     padding: 10px;
     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .blog-entry {
@@ -171,10 +174,17 @@ a:hover {
     border-radius: 8px;
     background-color: var(--card-background);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     overflow: hidden;
     opacity: 0;
     transform: translateY(20px);
+    display: none;
+}
+
+.blog-entry.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .blog-entry:hover {
@@ -201,6 +211,10 @@ a:hover {
     gap: 10px;
     margin-top: 10px;
     flex-wrap: wrap;
+}
+
+.hidden-blogs .blog-entry {
+    display: none;
 }
 
 .tag {
@@ -468,7 +482,7 @@ button:active {
 button:focus {
     outline: none;
     text-decoration: none;
-    border-bottom: 2px solid var(--highlight-color);
+    /* border-bottom: 2px solid var(--highlight-color); */
 }
 
 .project-container {
@@ -488,6 +502,7 @@ button:focus {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .project-card {
@@ -500,6 +515,17 @@ button:focus {
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
+    transition: transform 0.3s, opacity 0.3s;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    display: none;
+}
+
+.project-card.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card .project-type {
@@ -557,6 +583,7 @@ button:focus {
     color: var(--link-color);
     margin-bottom: 10px;
 }
+
 
 nav {
     background-color: var(--nav-background);  

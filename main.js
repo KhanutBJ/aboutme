@@ -27,6 +27,7 @@ function setupIntersectionObserver() {
                 return;
             } else {
                 entry.target.style.animation = `floatUp 1s ease-out forwards`;
+                entry.target.classList.add('observed');
                 appearOnScroll.unobserve(entry.target);
             }
         });
@@ -122,6 +123,7 @@ function fetchAndDisplayBlogs() {
 }
 
 // Fetch and display project entries
+let observerCallCount = 0;
 function fetchAndDisplayProjects() {
     fetch('projects.json')
         .then(response => response.json())
@@ -141,9 +143,20 @@ function fetchAndDisplayProjects() {
                 if (visibleCount < 3) {
                     projectCard.classList.add('visible');
                     visibleCount++;
+                    if (observerCallCount < 3) {
+                        console.log('true')
+                        setupIntersectionObserver();
+                        observerCallCount++;
+                    }
+                    else {
+                        console.log('false')
+                        observerCallCount = 0;
+                    }
+                    
                 } else {
                     hiddenProjects.push(projectCard);
                 }
+                
                 projectCard.innerHTML = `
                     <div class="project-type">${project.type}</div>
                     <img src="${project.image}" alt="Project Image" class="project-image">
@@ -154,7 +167,9 @@ function fetchAndDisplayProjects() {
                     <div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                 `;
                 projectGrid.appendChild(projectCard);
+
             });
+            
 
             // Initialize Masonry after all project cards are appended
             const msnry = new Masonry(projectGrid, {
@@ -162,7 +177,6 @@ function fetchAndDisplayProjects() {
                 columnWidth: '.project-card',
                 percentPosition: true,
                 transitionDuration: '0.3s',
-                // fitWidth: false,
                 horizontalOrder: true
 
             });
@@ -172,7 +186,6 @@ function fetchAndDisplayProjects() {
                 msnry.layout();
             });
 
-            
 
             if (hiddenProjects.length > 0) {
                 viewMoreBtn.style.display = 'block';

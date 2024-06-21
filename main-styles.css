@@ -509,11 +509,6 @@ button:focus {
     flex-wrap: wrap;
 }
 
-.project-sizer {
-    width: 100%;
-}
-
-
 .project-card {
     border: 1px solid #e0e0e0;
     padding: 15px;

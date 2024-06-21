@@ -63,12 +63,20 @@ header {
     box-sizing: border-box; 
 }
 
+.logo a {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 nav {
     flex: 1;
     display: flex;
     justify-content: flex-end; /* Align nav items to the right */
     width: 100%; 
     box-sizing: border-box; 
+    /* position: fixed; */
 }
 
 nav ul {
@@ -79,6 +87,7 @@ nav ul {
     align-items: center;
     width: auto; 
     box-sizing: border-box; 
+    /* position: fixed; */
 }
 
 nav ul li, nav ul span {

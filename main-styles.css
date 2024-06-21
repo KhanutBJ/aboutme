@@ -830,6 +830,7 @@ nav {
     .logo h3 {
         font-size: 15px;
         padding-right: 20px;
+        padding-left: 5px;
     }
 
 }

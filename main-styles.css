@@ -8,7 +8,7 @@ html {
     --text-color: #2a2a2a;
     --link-color: #0f62fe;
     --link-hover-color: #0056b3;
-    --nav-background: #e0f7fa33;
+    --nav-background: #e0f7fa66;
     --card-background: #ffffff;
     --footer-background: #393939;
     --footer-text-color: #ffffff;
@@ -164,13 +164,14 @@ a:hover {
     /* width: 100%; */
     padding: 10px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
 }
 
 .blog-entry {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
     background-color: var(--card-background);
@@ -502,19 +503,23 @@ button:focus {
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
-    margin-bottom: 40px;
 }
+
+.project-sizer {
+    width: 100%;
+}
+
 
 .project-card {
     border: 1px solid #e0e0e0;
     padding: 15px;
     border-radius: 8px;
     background-color: var(--card-background);
-    position: relative;
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -522,12 +527,34 @@ button:focus {
     transition: transform 0.3s, opacity 0.3s;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); 
     display: none;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive layout */
+@media (min-width: 1200px) {
+    .project-card {
+        width: calc(33.333% - 20px); 
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .project-card {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 991px) {
+    .project-card {
+        width: calc(100% - 20px); 
+    }
 }
 
 .project-card.visible {
-    display: block;
+    display: flex;
     opacity: 1;
     transform: translateY(0);
 }
@@ -943,26 +970,25 @@ nav {
     }
 }
 
-@media (max-height: 360px) and (orientation: landscape) {
+/* @media (max-width: 360px) and (orientation: portrait) {
 
     .details img {
-        transform: translate(-20%, 100%);
+        transform: translate(-50%, 100%);
     }
 
-}
+} */
 
-@media (max-width: 912px) and (orientation: portrait) {
+/* @media (max-width: 912px) and (orientation: portrait) {
 
     .welcome-section {
-        padding-top: 180px;
-        /* padding-bottom: 100px; */
+        padding-top: 150px;
     }
 
     .details img {
         transform: translate(-10%, 100%);
     }
 
-}
+} */
 
 
 @media (max-width: 344px) and (orientation: portrait) {

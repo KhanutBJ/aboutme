@@ -15,7 +15,7 @@ function setupSmoothScrolling() {
 
 // Intersection Observer for floating up elements
 function setupIntersectionObserver() {
-    const faders = document.querySelectorAll('.profile, .blog-entry, .skills, .interests, .about-me, .additional-content, .contact-container, .quote-container, .bio-container, .roadmap');
+    const faders = document.querySelectorAll('.profile, .blog-entry, .project-card, .skills, .interests, .about-me, .additional-content, .contact-container, .quote-container, .bio-container, .roadmap');
     const appearOptions = {
         threshold: 0.3,
         rootMargin: "0px 0px -50px 0px"
@@ -67,7 +67,10 @@ function fetchAndDisplayBlogs() {
                     <p class="blog-description">${blog.description}</p>
                 `;
                 blogContainer.appendChild(blogEntry);
+                
             });
+
+            setupIntersectionObserver(); 
 
             // Display "View More" button only if there are more hidden blogs
             if (hiddenBlogs.length > 0) {
@@ -153,19 +156,48 @@ function fetchAndDisplayProjects() {
                 projectGrid.appendChild(projectCard);
             });
 
+            // Initialize Masonry after all project cards are appended
+            const msnry = new Masonry(projectGrid, {
+                itemSelector: '.project-card',
+                columnWidth: '.project-card',
+                percentPosition: true,
+                transitionDuration: '0.3s',
+                // fitWidth: false,
+                horizontalOrder: true
+
+            });
+
+            // Layout Masonry after images have loaded
+            imagesLoaded(projectGrid, () => {
+                msnry.layout();
+            });
+
+            
+
             if (hiddenProjects.length > 0) {
                 viewMoreBtn.style.display = 'block';
             }
 
             viewMoreBtn.addEventListener('click', () => {
                 let revealedCount = 0;
+                const fragment = document.createDocumentFragment();
 
                 hiddenProjects.forEach(project => {
                     if (revealedCount < 3 && !project.classList.contains('visible')) {
                         project.classList.add('visible');
+                        fragment.appendChild(project);
                         revealedCount++;
                     }
                 });
+
+                projectGrid.appendChild(fragment);
+
+                // Append new items and re-layout Masonry
+                imagesLoaded(projectGrid, () => {
+                    msnry.appended(fragment.children);
+                    msnry.layout();
+                });
+                
 
                 if (revealedCount < 3) {
                     viewMoreBtn.style.display = 'none';
@@ -175,8 +207,19 @@ function fetchAndDisplayProjects() {
             });
 
             viewAllBtn.addEventListener('click', () => {
+                const fragment = document.createDocumentFragment();
+
                 hiddenProjects.forEach(project => {
                     project.classList.add('visible');
+                    fragment.appendChild(project);
+                });
+
+                projectGrid.appendChild(fragment);
+
+                // Append new items and re-layout Masonry
+                imagesLoaded(projectGrid, () => {
+                    msnry.appended(fragment.children);
+                    msnry.layout();
                 });
 
                 viewMoreBtn.style.display = 'none';
@@ -188,7 +231,7 @@ function fetchAndDisplayProjects() {
                 hiddenProjects.forEach(project => {
                     project.classList.remove('visible');
                 });
-
+    
                 viewMoreBtn.style.display = 'block';
                 viewAllBtn.style.display = 'block';
                 collapseBtn.style.display = 'none';
@@ -196,7 +239,17 @@ function fetchAndDisplayProjects() {
                     top: document.getElementById('project').offsetTop - 50, 
                     behavior: 'smooth'
                 });
+                
+                // Initialize Masonry after all project cards are appended
+                const msnry = new Masonry(projectGrid, {
+                    itemSelector: '.project-card',
+                    columnWidth: '.project-card',
+                    percentPosition: true,
+                    transitionDuration: '0.3s'
+                });
+
             });
+
         })
         .catch(error => console.error('Error fetching project data:', error));
 }
@@ -219,8 +272,10 @@ function setupDarkModeToggle() {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScrolling();
-    setupIntersectionObserver();
     fetchAndDisplayBlogs();
     fetchAndDisplayProjects();
     setupDarkModeToggle();
+    setupIntersectionObserver();
 });
+
+

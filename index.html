@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="main-styles.css">
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
 </head>
 <body>
     <nav>
@@ -114,7 +117,9 @@
 
          <div class="project-container" id="project">
             <h2 style="text-align:center;">Projects</h2>
-            <div id="project-grid" class="project-grid"></div>
+            <div id="project-grid" class="project-grid">
+                <div class="project-sizer"></div>
+            </div>
             <button id="view-more-projects-btn" style="display: block; margin: 10px auto;">View More →</button>
             <button id="view-all-projects-btn" style="display: block; margin: 10px auto;">View All →</button>
             <button id="collapse-projects-btn" style="display: none; margin: 10px auto;">Collapse</button>
@@ -223,5 +228,6 @@
         </div>
         <p class="footer-note">© 2023 KhanutBJ. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

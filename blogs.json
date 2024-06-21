@@ -205,7 +205,7 @@
                 "position": "header"
             }
         ],
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "commed",
@@ -257,7 +257,7 @@
                 "position": "header"
             }
         ],
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "brain-camp",

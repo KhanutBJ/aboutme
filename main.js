@@ -147,7 +147,7 @@ function fetchAndDisplayProjects() {
                     <h3 class="project-title">${project.title}</h3>
                     <p class="project-date">${project.date}</p>
                     <p class="project-info">${project.info}</p>
-                    <a href="${project.link}">Read more →</a>
+                    <a href="blog.html?id=${project.id}">Read more →</a>
                     <div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                 `;
                 projectGrid.appendChild(projectCard);

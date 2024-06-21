@@ -1,5 +1,6 @@
 [
     {
+        "id": "ms-hack",
         "type": "Hackathon",
         "image": "background.jpg",
         "title": "Personalized Object Recognition",
@@ -10,6 +11,7 @@
         "hidden": false
     },
     {
+        "id": "brain-hack",
         "type": "Summer school",
         "image": "background.jpg",
         "title": "Scalable Open-vocabulary Imagined Speech BCI System",
@@ -20,6 +22,7 @@
         "hidden": false
     },
     {
+        "id": "TBA",
         "type": "Release",
         "image": "background.jpg",
         "title": "TBA",
@@ -30,6 +33,7 @@
         "hidden": true
     },
     {
+        "id": "TBA",
         "type": "Release",
         "image": "background.jpg",
         "title": "TBA",
@@ -40,26 +44,7 @@
         "hidden": true
     },
     {
-        "type": "Release",
-        "image": "background.jpg",
-        "title": "TBA",
-        "date": "TBA",
-        "info": "TBA",
-        "link": "/blog/1.html",
-        "tags": ["TBA"],
-        "hidden": true
-    },
-    {
-        "type": "Release",
-        "image": "background.jpg",
-        "title": "TBA",
-        "date": "TBA",
-        "info": "TBA",
-        "link": "/blog/1.html",
-        "tags": ["TBA"],
-        "hidden": true
-    },
-    {
+        "id": "TBA",
         "type": "Release",
         "image": "background.jpg",
         "title": "TBA",
@@ -69,5 +54,4 @@
         "tags": ["TBA"],
         "hidden": true
     }
-
 ]

@@ -809,7 +809,7 @@ nav {
 
     .nav-container {
         max-width: 1000px;
-        padding: 0 5px;
+        padding: 0 10px;
     }
 
     .nav-container ul li {
@@ -829,7 +829,7 @@ nav {
 
     .logo h3 {
         font-size: 15px;
-        padding-right: 30px;
+        padding-right: 20px;
     }
 
 }
@@ -906,7 +906,7 @@ nav {
     }
     
     .nav-container ul li a {
-        font-size: 12px;
+        font-size: 11px;
         padding: 1px 3px;
     }
     
@@ -915,6 +915,11 @@ nav {
         margin-left: 5px;
     }
 
+    .logo h3 {
+        font-size: 15px;
+        padding-right: 30px;
+        padding-left: 10px;
+    }
 }
 
 @media (max-height: 360px) and (orientation: landscape) {

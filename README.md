@@ -1,2 +1,2 @@
 # Personal Webpage #
-Here → khanutbj.xyz
+Link: khanutbj.xyz

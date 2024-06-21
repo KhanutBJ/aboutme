@@ -751,8 +751,13 @@ nav {
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
+    
+    .welcome-section {
+        padding-top: 100px;
+    }
+    
     .details img {
-        transform: translate(-10%, 100%);
+        transform: translate(-10%, 70%);
     }
 }
 
@@ -927,6 +932,31 @@ nav {
 
     .details img {
         transform: translate(-20%, 100%);
+    }
+
+}
+
+@media (max-width: 912px) and (orientation: portrait) {
+
+    .details img {
+        transform: translate(0%, 100%);
+    }
+
+}
+
+
+@media (max-width: 344px) and (orientation: portrait) {
+
+    .details img {
+        transform: translate(-60%, 100%);
+    }
+
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+
+    .details img {
+        transform: translate(-60%, 100%);
     }
 
 }

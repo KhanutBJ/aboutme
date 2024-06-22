@@ -30,7 +30,8 @@
             {
                 "type": "video",
                 "src": "https://www.youtube.com/embed/your-video-id",
-                "position": "header"
+                "description": "bruh",
+                "position": "body"
             },
             {
                 "type": "text",

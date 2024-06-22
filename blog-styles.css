@@ -9,7 +9,7 @@
     --footer-background: #393939;
     --footer-text-color: #ffffff;
     --quote-bg: #f4f7fb;
-    --tag-bg:  #e0f7e0;
+    --tag-bg: #e0f7e0;
     --tag-hover-bg: #0f62fe;
     --tag-hover-color: #ffffff;
     --highlight-color: #ffffff;
@@ -50,18 +50,20 @@ header {
     border-bottom: 1px solid #e0e0e0;
     padding: 1px 0;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+    align-items: left;
+    min-width: 400px;
     padding: 0 20px;
-    width: 100%; 
-    box-sizing: border-box; 
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .logo a {
     font-size: 20px;
@@ -73,10 +75,9 @@ header {
 nav {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
-    width: 100%; 
-    box-sizing: border-box; 
-    /* position: fixed; */
+    justify-content: flex-end;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul {
@@ -85,9 +86,6 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
-    width: auto; 
-    box-sizing: border-box; 
-    /* position: fixed; */
 }
 
 nav ul li, nav ul span {
@@ -108,8 +106,8 @@ nav ul li a:hover, nav ul span:hover {
 
 .breadcrumb {
     max-width: 1200px;
-    margin: 20px 0px;
-    padding: 0 20px;
+    margin-top: 20px;
+    margin-left: 20px;
     color: #555;
     font-size: 0.9em;
 }
@@ -247,13 +245,13 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 10px;
-    }
+    } */
 
     .sidebar {
         padding-right: 20px;
@@ -273,12 +271,16 @@ footer {
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
     }
+
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 430px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 8px;
-    }
+    } */
 
     .sidebar {
         padding-right: 10px;
@@ -298,12 +300,16 @@ footer {
         grid-template-columns: 1fr 1fr;
         column-gap: 8px;
     }
+
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 412px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 6px;
-    }
+    } */
 
     .sidebar {
         padding-right: 10px;
@@ -323,12 +329,15 @@ footer {
         grid-template-columns: 1fr 1fr;
         column-gap: 6px;
     }
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 390px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 5px;
-    }
+    } */
 
     .sidebar {
         padding-right: 10px;
@@ -348,12 +357,15 @@ footer {
         grid-template-columns: 1fr 1fr;
         column-gap: 5px;
     }
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 360px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 5px;
-    }
+    } */
 
     .sidebar {
         padding-right: 5px;
@@ -373,12 +385,15 @@ footer {
         grid-template-columns: 1fr 1fr;
         column-gap: 4px;
     }
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 768px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 10px;
-    }
+    } */
     
     nav ul li, nav ul span {
         margin: 0 5px;
@@ -388,12 +403,15 @@ footer {
         padding: 5px 5px;
         font-size: 14px;
     }
+    header, footer {
+        width: 115%;
+    }
 }
 
 @media (max-width: 430px) {
-    .header-container, .breadcrumb, .blog-post, .content {
+    /* .header-container, .breadcrumb, .blog-post, .content {
         padding: 0 10px;
-    }
+    } */
     
     nav ul li, nav ul span {
         margin: 0 3px;
@@ -403,4 +421,10 @@ footer {
         padding: 5px 3px;
         font-size: 12px;
     }
+
+    header, footer {
+        width: 115%;
+    }
 }
+
+

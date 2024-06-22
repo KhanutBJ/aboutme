@@ -60,6 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     const div = document.createElement('div');
                     div.className = 'video-placeholder';
                     div.innerHTML = `<iframe width="560" height="315" src="${item.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    
+                    if (item.description) {
+                        const description = document.createElement('p');
+                        description.className = 'video-description';
+                        description.style.opacity = '0.6';
+                        description.style.fontSize = '0.8em';
+                        description.style.marginTop = '-20px';
+                        description.innerText = item.description;
+                        div.appendChild(description);
+                    }
+                    
                     if (item.position === 'header') {
                         headerContainer.appendChild(div);
                     } else {
@@ -82,17 +93,41 @@ document.addEventListener('DOMContentLoaded', () => {
         return minutes;
     }
 
-    document.getElementById('mode-toggle').addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        const sunIcon = this.querySelector('.sun-icon');
-        const moonIcon = this.querySelector('.moon-icon');
-        if (document.body.classList.contains('dark-mode')) {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
+    function setupDarkModeToggle() {
+        const bodyClassList = document.body.classList;
+        const modeToggle = document.getElementById('mode-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+    
+        // Initialize mode based on the time of the day
+        const now = new Date();
+        const hour = now.getHours();
+        const isNightTime = hour >= 19 || hour < 7;
+        if (isNightTime) {
+            bodyClassList.add('dark-mode');
         } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
+            bodyClassList.remove('dark-mode');
         }
-    });
+        toggleIcons(bodyClassList.contains('dark-mode'));
+    
+        // Toggle dark mode manually
+        modeToggle.addEventListener('click', () => {
+            bodyClassList.toggle('dark-mode');
+            toggleIcons(bodyClassList.contains('dark-mode'));
+        });
+    
+        // Helper function to toggle icons based on the mode
+        function toggleIcons(isDarkMode) {
+            if (isDarkMode) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        }
+    }
 
+    setupDarkModeToggle(); // Call setupDarkModeToggle to initialize dark mode
+    
 });

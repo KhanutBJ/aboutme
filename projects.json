@@ -1,7 +1,7 @@
 [
     {
         "id": "ms-hack",
-        "type": "Hackathon",
+        "category": "Hackathon",
         "image": "background.jpg",
         "title": "Personalized Object Recognition",
         "date": "13 June 2024",
@@ -11,7 +11,7 @@
     },
     {
         "id": "brain-hack",
-        "type": "Summer school",
+        "category": "Summer school",
         "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZvKAHxI5a20sNhisSX8lNA7b5-p-R6RUhqwGzPhKecItsNz2NaWNVG5NGwvV_ZMM-C33MCClGPtFNWJlfn0wPOxt4ots9XBQ=s1600-rw-v1",
         "title": "Scalable Open-vocabulary Imagined Speech BCI System",
         "date": "2 Feb 2024",
@@ -21,7 +21,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -31,7 +31,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -41,7 +41,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -51,7 +51,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -61,7 +61,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -71,7 +71,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",
@@ -81,7 +81,7 @@
     },
     {
         "id": "TBA",
-        "type": "Release",
+        "category": "Release",
         "image": "background.jpg",
         "title": "TBA",
         "date": "TBA",

@@ -158,7 +158,7 @@ function fetchAndDisplayProjects() {
                 }
                 
                 projectCard.innerHTML = `
-                    <div class="project-type">${project.type}</div>
+                    <div class="project-type">${project.category}</div>
                     <img src="${project.image}" alt="Project Image" class="project-image">
                     <h3 class="project-title">${project.title}</h3>
                     <p class="project-date">${project.date}</p>

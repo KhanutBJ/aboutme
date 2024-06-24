@@ -37,14 +37,14 @@ function toggleChat() {
     const chatPopup = document.getElementById('chat-popup');
     const chatContainer = document.getElementById('chat-container');
     chatPopup.style.display = chatPopup.style.display === 'none' || chatPopup.style.display === '' ? 'flex' : 'none';
-    chatContainer.style.opacity = 1;
+    chatContainer.style.opacity = 0.9;
 }
 
 // Add event listener to detect scroll and adjust opacity
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
     const chatContainer = document.getElementById('chat-container');
-    chatContainer.style.opacity = Math.max(1 - scrollY / 300, 0.5);
+    chatContainer.style.opacity = Math.max(0.9 - scrollY / 300, 0.5);
 });
 
 // Add event listener to detect click outside of chat window
@@ -55,7 +55,7 @@ document.addEventListener('click', function (event) {
         chatPopup.style.display = 'none';
         chatContainer.style.opacity = 0.5;
     } else {
-        chatContainer.style.opacity = 1;
+        chatContainer.style.opacity = 0.9;
     }
 });
 
@@ -378,6 +378,14 @@ document.getElementById('user-input').addEventListener('keypress', function (e) 
         sendMessage();
     }
 });
+// Add event listeners to the input field for both 'click' and 'keyup' events
+document.getElementById('user-input').addEventListener('click', increaseOpacity);
+document.getElementById('user-input').addEventListener('keyup', increaseOpacity);
+
+function increaseOpacity() {
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.style.opacity = 0.9; // Increase opacity on click or while typing
+}
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 
 // Prevent dev tool
@@ -397,4 +405,4 @@ function detectDevTools() {
     }
 }
 
-setInterval(detectDevTools, 1000);
+// setInterval(detectDevTools, 1000);

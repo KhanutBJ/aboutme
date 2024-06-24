@@ -6,7 +6,10 @@
     <title>Blog</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="blog-styles.css">
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="stylesheet" href="chat-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script src="chat.js" defer></script>
     <script src="blog.js"></script>
 </head>
 <body>
@@ -61,6 +64,21 @@
             </article>
         </section>
     </main>
+
+    <div id="chat-container">
+        <div id="chat-bubble" onclick="toggleChat()">💬</div>
+        <div id="chat-popup">
+            <div id="chat-header">Web Guide</div>
+            <div id="messages"></div>
+            <div id="input-container">
+                <input type="text" id="user-input" placeholder="Type a message...">
+                <button id="send-btn">
+                    <span class="iconify" data-icon="mdi:send" data-inline="false"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2023 KhanutBJ. All rights reserved.</p>
     </footer>

@@ -303,7 +303,110 @@ function setupDarkModeToggle() {
     }
 }
 
+function getBackground() {
+    fetch('background.json')
+        .then(response => response.json())
+        .then(data => {
+            const getContent = (id) => data.find(item => item.id === id).content;
+
+            // Hero Section
+            const heroContent = getContent('hero');
+            document.querySelector('#hero-highlight').innerHTML = heroContent.title.replace(/\n/g, '<br>');
+            document.querySelector('#hero-image').src = heroContent.image;
+            document.querySelector('#hero-description').textContent = heroContent.description;
+            document.querySelector('#hero-link').textContent = heroContent.linkText;
+
+            // Profile Section
+            const profileContent = getContent('profile');
+            document.querySelector('.profile .top h1').textContent = profileContent.name;
+            document.querySelector('.profile .details .title p').textContent = profileContent.title;
+            document.querySelector('.profile .details .location p').textContent = profileContent.location;
+            document.querySelector('#profile-image').src = profileContent.image;
+
+            // Quote Section
+            document.querySelector('.quote-container .quote-text').textContent = getContent('quote').text;
+            document.querySelector('.quote-container .quote-author').textContent = getContent('quote').author;
+
+            // Bio Section
+            document.querySelector('.bio-container .bio p').innerHTML = getContent('bio');
+            const topicsContainer = document.querySelector('.bio-container .topics .topic-tags');
+            getContent('bio-topics').forEach(topic => {
+                const span = document.createElement('span');
+                span.className = 'topic-tag';
+                span.textContent = topic;
+                topicsContainer.appendChild(span);
+            });
+
+            // Skills Section
+            const skillsContainer = document.querySelector('#skills');
+            getContent('skills').forEach(skill => {
+                const span = document.createElement('span');
+                span.className = 'skill';
+                span.textContent = skill;
+                skillsContainer.appendChild(span);
+            });
+
+            // Research Interests
+            const researchInterestsContainer = document.querySelector('#research-interests');
+            getContent('research-interests').forEach(interest => {
+                const span = document.createElement('span');
+                span.className = 'interest';
+                span.textContent = interest;
+                researchInterestsContainer.appendChild(span);
+            });
+
+            // Medical Interests
+            const medicalInterestsContainer = document.querySelector('#medical-interests');
+            getContent('medical-interests').forEach(interest => {
+                const span = document.createElement('span');
+                span.className = 'interest';
+                span.textContent = interest;
+                medicalInterestsContainer.appendChild(span);
+            });
+
+            // Education Section
+            const educationContainer = document.querySelector('.education .roadmap');
+            getContent('education').forEach(edu => {
+                const div = document.createElement('div');
+                div.className = 'roadmap-item';
+                div.innerHTML = `<p class="section-content">${edu.degree} - ${edu.institution} (${edu.period})</p>`;
+                educationContainer.appendChild(div);
+            });
+
+            // Awards Section
+            const awardsContainer = document.querySelector('.Awards .roadmap');
+            getContent('awards').forEach(award => {
+                const div = document.createElement('div');
+                div.className = 'roadmap-item';
+                div.innerHTML = `<p class="section-content">${award.title} - ${award.organization} (${award.year})</p>`;
+                awardsContainer.appendChild(div);
+            });
+
+            // Certificates Section
+            const certificatesContainer = document.querySelector('.certificate .roadmap');
+            getContent('certificates').forEach(cert => {
+                const div = document.createElement('div');
+                div.className = 'roadmap-item';
+                div.innerHTML = `<p class="section-content">${cert.title} - ${cert.organization} (${cert.year})</p>`;
+                certificatesContainer.appendChild(div);
+            });
+
+            // Contact Section
+            const contactContainer = document.querySelector('.contact-container');
+            getContent('contact').forEach(contact => {
+                const a = document.createElement('a');
+                a.className = 'contact';
+                a.href = contact.url;
+                a.innerHTML = `<span class="iconify" data-icon="${contact.icon}" style="font-size: 30px;"></span><p style="font-size: 16px;">${contact.type}</p>`;
+                contactContainer.appendChild(a);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+};
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    getBackground();
     setupSmoothScrolling();
     fetchAndDisplayBlogs();
     fetchAndDisplayProjects();

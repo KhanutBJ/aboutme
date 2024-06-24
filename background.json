@@ -1,0 +1,137 @@
+[
+    {
+        "id": "hero",
+        "content": {
+            "title": "Solving\nAnalog \nand Digital",
+            "description": "Bringing the benefits of both worlds to drive progress for all.",
+            "linkText": "What've been done so far →",
+            "image": "logo.png"
+        }
+    },
+    {
+        "id": "profile",
+        "content": {
+            "name": "Khanut Boonjong",
+            "title": "Medical & Engineering Student",
+            "location": "Bangkok, Thailand",
+            "image": "icon.png"
+        }
+    },
+    {
+        "id": "quote",
+        "content": {
+            "text": "No learning curve is too steep if it provides meaningful insights",
+            "author": "An Outlook"
+        }
+    },
+    {
+        "id": "bio",
+        "content": "Building is my passion - I like to identify gaps, invent solutions to bridge them, and implement them to create real change. It excites me to learn cutting-edge technologies and innovative concepts. I enjoy coding and experimenting with ideas. New technology is never a barrier to take on a new challenge.\n\nGraduated from a STEM high school with experience in deep learning and basic science research. Along the way, I have built skills in signal processing and various technology stacks. Now, I'm studying Medicine and Engineering to learn what they offer to solve and inspire. I have worked on several projects aimed at bridging technology gaps to benefit health. I believe AI will benefit medicine, and understanding related fields like neuroscience may offers insights for building efficient AI systems, creating a reciprocal relationship that drives innovation."
+    },
+    {
+        "id": "bio-topics",
+        "content": ["Medicine", "Neuroscience", "Technology", "AI", "Research"]
+    },
+    {
+        "id": "skills",
+        "content": ["Python", "HTML", "CSS", "JavaScript", "Flask", "Cloud", "ML/DL"]
+    },
+    {
+        "id": "research-interests",
+        "content": ["Computational Neuroscience", "Neuromorphic Computing", "Biomedical Signal Processing", "Wearable Devices"]
+    },
+    {
+        "id": "medical-interests",
+        "content": ["Neurology", "Sleep Medicine", "Migraine", "Psychiatry"]
+    },
+    {
+        "id": "education",
+        "content": [
+            {
+                "degree": "Doctor of Medicine / Master of Engineering (M.D.- M.Eng.)",
+                "institution": "Faculty of Medicine Ramathibodi Hospital, Mahidol University, Thailand",
+                "period": "2023 - present"
+            },
+            {
+                "degree": "High School Diploma",
+                "institution": "Kamnoetvidya Science Academy, Thailand",
+                "period": "2020 - 2023"
+            }
+        ]
+    },
+    {
+       "id": "awards",
+        "content": [
+            {
+                "title": "Finalist, Microsoft AI for Accessibility",
+                "organization": "Microsoft, Thailand",
+                "year": "2024"
+            },
+            {
+                "title": "First Place Winner, Brain Hackathon",
+                "organization": "KMUTT, Thailand",
+                "year": "2024"
+            },
+            {
+                "title": "First Runner-up, Poster Award, Asian Science Camp",
+                "organization": "IBS Institute for Basic Science, Korea",
+                "year": "2022"
+            },
+            {
+                "title": "Silver Medal, 18th Thailand Biology Olympiad",
+                "organization": "POSN, Thailand",
+                "year": "2021"
+            }
+        ]
+    },
+    {
+        "id": "certificates",
+        "content": [
+            {
+                "title": "Graduate of Brain Code Camp",
+                "organization": "PMU-B | Chula | KMUTT, Thailand",
+                "year": "2023"
+            },
+            {
+                "title": "Graduate of AI Builders",
+                "organization": "VISTEC/VISAI | Central Retail Digital, Thailand",
+                "year": "2022"
+            }
+        ]
+    },
+    {
+        "id": "contact",
+        "content": [
+            {
+                "type": "Email",
+                "icon": "ic:baseline-email",
+                "url": "mailto:ckbj2016@gmail.com"
+            },
+            {
+                "type": "LinkedIn",
+                "icon": "simple-icons:linkedin",
+                "url": "https://www.linkedin.com/in/khanut-boonjong-448868222"
+            },
+            {
+                "type": "Discord",
+                "icon": "simple-icons:discord",
+                "url": "https://discordapp.com/users/473486284741148672"
+            },
+            {
+                "type": "Instagram",
+                "icon": "ri:instagram-line",
+                "url": "https://www.instagram.com/khanutbj/"
+            },
+            {
+                "type": "Github",
+                "icon": "simple-icons:github",
+                "url": "https://github.com/KhanutBJ"
+            },
+            {
+                "type": "Medium",
+                "icon": "ri:medium-fill",
+                "url": "https://medium.com/@vwgprvvtsf"
+            }
+        ]
+    }
+]

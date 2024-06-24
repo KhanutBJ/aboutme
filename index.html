@@ -12,11 +12,15 @@
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="main-styles.css">
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="chat-styles.css">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script src="chat.js" defer></script>
+    <script src="main.js" defer></script>
+    
+    
 </head>
 <body>
     <nav>
@@ -28,8 +32,8 @@
             </div>
             <ul>
                 <li><a href="#about">Bio</a></li>
-                <li><a href="#blog">Blogs</a></li>
-                <li><a href="#project">Projects</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Background</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li id="mode-toggle" class="mode-toggle">
@@ -38,72 +42,60 @@
                 </li>
             </ul>
         </div>
-    </nav>    
+    </nav>
 
     <div class="background-layer"></div>
     <header>
-        <div class="profile">
+        <div class="profile" id="profile">
             <div class="welcome-section">
                 <p>01 Welcome</p>
-                <!-- <a href="#">Home</a> -->
-                <!-- <h2>Inventing<br>What's Next</h2> -->
             </div>
-            <div class="hero">
-                <h1 class="highlight">Solving<br>Analog <br>and Digital</h1>
-                <img src="logo.png"Graphic">
-                <a href="#blog">What've been done so far →</a>
-                <p>Bringing the benefits of both worlds to drive progress for all.</p>
+            <div class="hero" id="hero">
+                <h1 id="hero-highlight" class="highlight"></h1>
+                <img id="hero-image" src="" alt="Graphic">
+                <a id="hero-link" href="#blog"></a>
+                <p id="hero-description"></p>
             </div>
             <div class="welcome-section">
                 <p>02 Profile</p>
             </div>
-            <h1>Khanut Boonjong</h1>
+            <div class="top">
+                <h1 class="name"></h1>
+            </div>
             <div class="details">
                 <div class="title">
                     <h3>Title</h3>
-                    <p>Medical & Engineering Student</p>
+                    <p></p>
                 </div>
                 <div class="location">
                     <h3>Location</h3>
-                    <p>Bangkok, Thailand</p>
+                    <p></p>
                 </div>
-                <img src="icon.png" alt="Profile Picture" class="profile-pic">
+                <img id="profile-image" src="" alt="Profile Picture" class="profile-pic">
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="quote-container">
-            <p class="quote-text">"No learning curve is too steep if it provides meaningful insights"</p>
-            <p class="quote-author">An Outlook</p>
+        <div class="quote-container" id="quote">
+            <p class="quote-text"></p>
+            <p class="quote-author"></p>
         </div>
 
         <div class="bio-container" id="about">
-            <div class="bio">
+            <div class="bio" id="bio">
                 <h3>Bio</h3>
                 <br>
-                <p> Building is my passion - I like to identify gaps, invent solutions to bridge them, and implement them to create real change. It excites me to learn cutting-edge technologies and innovative concepts. I enjoy coding and experimenting with ideas. New technology is never a barrier to take on a new challenge. 
-                    <br><br> Graduated from a STEM high school with experience in deep learning and basic science research. Along the way, I have built skills in signal processing and various technology stacks. Now, I'm studying Medicine and Engineering to learn what they offer to solve and inspire.
-                    I have worked on several projects aimed at bridging technology gaps to benefit health. I believe AI will benefit medicine, and understanding related fields like neuroscience may offers insights for building efficient AI systems, creating a reciprocal relationship that drives innovation.</p>
+                <p></p>
             </div>
-            <div class="topics">
+            <div class="topics" id="bio-topics">
                 <h3>Topics</h3>
                 <br>
-                <div class="topic-tags">
-                    <span class="topic-tag">Medicine</span>
-                    <span class="topic-tag">Neuroscience</span>
-                    <span class="topic-tag">Technology</span>
-                    <span class="topic-tag">AI</span>
-                    <span class="topic-tag">Research</span>
-                </div>
+                <div class="topic-tags"></div>
             </div>
         </div>
 
-
-         <!-- ###################################################################################### -->
-
-
-         <div class="blog-container" id="blog">
+        <div class="blog-container" id="blogs">
             <h2 style="text-align:center;">Blogs</h2>
             <div id="blog-entries"></div>
             <button id="view-more-btn" style="display: block; margin: 10px auto;">View More →</button>
@@ -111,121 +103,60 @@
             <button id="collapse-btn" style="display: none; margin: 10px auto;">Collapse</button>
         </div>
 
-
-         <!-- ###################################################################################### -->
-
-
-         <div class="project-container" id="project">
+        <div class="project-container" id="projects">
             <h2 style="text-align:center;">Projects</h2>
             <div id="project-grid" class="project-grid"></div>
             <button id="view-more-projects-btn" style="display: block; margin: 10px auto;">View More →</button>
             <button id="view-all-projects-btn" style="display: block; margin: 10px auto;">View All →</button>
             <button id="collapse-projects-btn" style="display: none; margin: 10px auto;">Collapse</button>
-        </div>        
+        </div>
 
-
-        <!-- ###################################################################################### -->
-        
-
+        <div id="background"></div>
         <div class="skills" id="skills">
             <h2>Tools</h2>
-            <span class="skill">Python</span>
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Flask</span>
-            <span class="skill">Cloud</span>
-            <span class="skill">ML/DL</span>
         </div>
 
-        <div class="interests" id="interests">
+        <div class="interests" id="research-interests">
             <h2>Research Interests</h2>
-            <span class="interest">Computational Neuroscience</span>
-            <span class="interest">Neuromorphic Computing</span>
-            <span class="interest">Biomedical Signal Processing</span>
-            <span class="interest">Wearable Devices</span>
         </div>
 
-        <div class="interests" id="interests">
+        <div class="interests" id="medical-interests">
             <h2>Medical Interests</h2>
-            <span class="interest">Neurology</span>
-            <span class="interest">Sleep Medicine</span>
-            <span class="interest">Migraine</span>
-            <span class="interest">Psychiatry</span>
         </div>
 
-        <div class="education">
+        <div class="education" id="education">
             <h2 class="section-title">Education</h2>
-            <div class="roadmap">
-                <div class="roadmap-item">
-                    <p class="section-content">Doctor of Medicine / Master of Engineering (M.D.- M.Eng.) - Faculty of Medicine Ramathibodi Hospital, Mahidol University, Thailand (2023 - present)</p>
-                </div>
-                <div class="roadmap-item">
-                    <p class="section-content">High School Diploma - Kamnoetvidya Science Academy, Thailand (2020 - 2023)</p>
-                </div>
-            </div>
+            <div class="roadmap"></div>
         </div>
 
-        <div class="Awards">
+        <div class="Awards" id="awards">
             <h2 class="section-title">Awards</h2>
-            <div class="roadmap">
-                <div class="roadmap-item">
-                    <p class="section-content"> Finalist, Microsoft AI for Accessibility - Microsoft, Thailand (2024)</p>
-                </div>
-                <div class="roadmap-item">
-                    <p class="section-content"> First Place Winner, Brain Hackathon - KMUTT, Thailand (2024)</p>
-                </div>
-                <div class="roadmap-item">
-                    <p class="section-content"> First Runner-up, Poster Award, Asian Science Camp - IBS Insitute for Basic Science, Korea (2022)</p>
-                </div>
-                <div class="roadmap-item">
-                    <p class="section-content"> Silver Medal, 18th Thailand Biology Olympiad - POSN, Thailand (2021)</p>
-                </div>
-            </div>
+            <div class="roadmap"></div>
         </div>
 
-        <div class="certificate">
+        <div class="certificate" id="certificates">
             <h2 class="section-title">Certificates</h2>
-            <div class="roadmap">
-                <div class="roadmap-item">
-                    <p class="section-content">Graduate of Brain Code Camp - PMU-B | Chula | KMUTT, Thailand (2023)</p>
-                </div>
-                <div class="roadmap-item">
-                    <p class="section-content">Graduate of AI Builders - VISTEC/VISAI | Central Retail Digital, Thailand (2022)</p>
-                </div>
+            <div class="roadmap"></div>
+        </div>
+    </div>
+
+    <div id="chat-container">
+        <div id="chat-bubble" onclick="toggleChat()">💬</div>
+        <div id="chat-popup">
+            <div id="chat-header">Web Guide</div>
+            <div id="messages"></div>
+            <div id="input-container">
+                <input type="text" id="user-input" placeholder="Type a message...">
+                <button id="send-btn">
+                    <span class="iconify" data-icon="mdi:send" data-inline="false"></span>
+                </button>
             </div>
         </div>
     </div>
 
     <footer id="contact">
-        <div class="contact-container">
-            <a class="contact" href="mailto:ckbj2016@gmail.com">
-                <span class="iconify" data-icon="ic:baseline-email" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">Email</p>
-            </a>
-            <a class="contact" href="https://www.linkedin.com/in/khanut-boonjong-448868222">
-                <span class="iconify" data-icon="simple-icons:linkedin" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">LinkedIn</p>
-            </a>
-            <a class="contact" href="https://discordapp.com/users/473486284741148672">
-                <span class="iconify" data-icon="simple-icons:discord" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">Discord</p>
-            </a>
-            <a class="contact" href="https://www.instagram.com/khanutbj/">
-                <span class="iconify" data-icon="ri:instagram-line" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">Instagram</p>
-            </a>
-            <a class="contact" href="https://github.com/KhanutBJ">
-                <span class="iconify" data-icon="simple-icons:github" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">Github</p>
-            </a>
-            <a class="contact" href="https://medium.com/@vwgprvvtsf">
-                <span class="iconify" data-icon="ri:medium-fill" style="font-size: 30px;"></span>
-                <p style="font-size: 16px;">Medium</p>
-            </a>
-        </div>
+        <div class="contact-container"></div>
         <p class="footer-note">© 2023 KhanutBJ. All rights reserved.</p>
     </footer>
-
 </body>
 </html>

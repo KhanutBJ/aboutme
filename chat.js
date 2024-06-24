@@ -3,13 +3,35 @@ let pastUserInputs = [];
 let generatedResponses = [];
 let contextHistory = [];
 
-// Initial welcome message
+function saveChatHistory() {
+    sessionStorage.setItem('contextData', JSON.stringify(contextData));
+    sessionStorage.setItem('pastUserInputs', JSON.stringify(pastUserInputs));
+    sessionStorage.setItem('generatedResponses', JSON.stringify(generatedResponses));
+    sessionStorage.setItem('contextHistory', JSON.stringify(contextHistory));
+    sessionStorage.setItem('messages', document.getElementById('messages').innerHTML);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    const welcomeMessage = document.createElement('div');
-    welcomeMessage.className = 'message bot';
-    welcomeMessage.innerHTML = '<div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div>';
-    document.getElementById('messages').appendChild(welcomeMessage);
+    // Load chat history if available
+    if (sessionStorage.getItem('messages')) {
+        document.getElementById('messages').innerHTML = sessionStorage.getItem('messages');
+    }
+
+    contextData = JSON.parse(sessionStorage.getItem('contextData') || '[]');
+    pastUserInputs = JSON.parse(sessionStorage.getItem('pastUserInputs') || '[]');
+    generatedResponses = JSON.parse(sessionStorage.getItem('generatedResponses') || '[]');
+    contextHistory = JSON.parse(sessionStorage.getItem('contextHistory') || '[]');
+
+    // Show welcome message if not already shown
+    if (!sessionStorage.getItem('welcomeMessageShown')) {
+        const welcomeMessage = document.createElement('div');
+        welcomeMessage.className = 'message bot';
+        welcomeMessage.innerHTML = '<div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div>';
+        document.getElementById('messages').appendChild(welcomeMessage);
+        sessionStorage.setItem('welcomeMessageShown', 'true');
+    }
 });
+
 
 function toggleChat() {
     const chatPopup = document.getElementById('chat-popup');
@@ -261,7 +283,7 @@ function createClickableSources(text) {
   }
   
 
-async function sendMessage() {
+  async function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     if (userInput.trim() === '') return;
 
@@ -335,6 +357,8 @@ async function sendMessage() {
             const messagesContainer = document.getElementById('messages');
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
+            saveChatHistory(); // Save chat history after updating conversation
+
             break; // Exit loop if the query was successful
         } catch (error) {
             console.error(`Error with model ${modelUrl}:`, error);
@@ -345,9 +369,8 @@ async function sendMessage() {
             }
         }
     }
-
-
 }
+
 
 // Event listeners for "Enter" key and send button click
 document.getElementById('user-input').addEventListener('keypress', function (e) {

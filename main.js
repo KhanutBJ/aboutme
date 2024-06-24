@@ -13,6 +13,22 @@ function setupSmoothScrolling() {
     });
 }
 
+// Scroll to the section if there's a hash in the URL on page load
+function scrollToHashOnLoad() {
+    if (window.location.hash) {
+        setTimeout(() => {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // adjust to desired offset
+                    behavior: 'smooth'
+                });
+            }
+        }, 500); // Delay to ensure all elements are loaded
+    }
+}
+
 // Intersection Observer for floating up elements
 function setupIntersectionObserver() {
     const faders = document.querySelectorAll('.profile, .blog-entry, .project-card, .skills, .interests, .about-me, .additional-content, .contact-container, .quote-container, .bio-container, .roadmap');
@@ -407,6 +423,7 @@ function getBackground() {
 
 document.addEventListener('DOMContentLoaded', () => {
     getBackground();
+    scrollToHashOnLoad();
     setupSmoothScrolling();
     fetchAndDisplayBlogs();
     fetchAndDisplayProjects();

@@ -188,7 +188,7 @@ async function decrypt(content, iv, tag, key) {
 }
 
 async function getApiKey() {
-    const response = await fetch('private/encrypted_key.json');
+    const response = await fetch('sub/encrypted_key.json');
     if (!response.ok) {
         throw new Error('Failed to load encrypted key');
     }

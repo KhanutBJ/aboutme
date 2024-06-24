@@ -362,7 +362,7 @@
                 "position": "header"
             }
         ],
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "conrad",
@@ -414,7 +414,7 @@
                 "position": "header"
             }
         ],
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "asc-2022",

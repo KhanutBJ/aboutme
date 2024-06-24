@@ -33,28 +33,25 @@ function scrollToHashOnLoad() {
 function setupIntersectionObserver() {
     const faders = document.querySelectorAll('.profile, .blog-entry, .project-card, .skills, .interests, .about-me, .additional-content, .contact-container, .quote-container, .bio-container, .roadmap');
     const appearOptions = {
-        threshold: 0.3,
+        threshold: 0.3, // Trigger when 30% of the element is in view
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+    const appearOnScroll = new IntersectionObserver(function (entries, self) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
+            if (entry.isIntersecting) {
                 entry.target.style.animation = `floatUp 1s ease-out forwards`;
                 entry.target.classList.add('observed');
-                appearOnScroll.unobserve(entry.target);
+                self.unobserve(entry.target); // Stop observing the current target
             }
         });
     }, appearOptions);
 
     faders.forEach(fader => {
-        appearOnScroll.observe(fader);
+        appearOnScroll.observe(fader); // Start observing each fader element
     });
 }
 
-// Fetch and display blog entries
 function fetchAndDisplayBlogs() {
     fetch('blogs.json')
         .then(response => response.json())
@@ -66,7 +63,7 @@ function fetchAndDisplayBlogs() {
             let visibleCount = 0;
             const hiddenBlogs = [];
 
-            data.forEach((blog, index) => {
+            data.forEach(blog => {
                 if (blog.hidden) return;
 
                 const blogEntry = document.createElement('div');
@@ -84,14 +81,15 @@ function fetchAndDisplayBlogs() {
                     <p class="blog-description">${blog.description}</p>
                 `;
                 blogContainer.appendChild(blogEntry);
-                
             });
 
-            setupIntersectionObserver(); 
+            setupIntersectionObserver();
 
-            // Display "View More" button only if there are more hidden blogs
             if (hiddenBlogs.length > 0) {
                 viewMoreBtn.style.display = 'block';
+            } else {
+                viewMoreBtn.style.display = 'none';
+                viewAllBtn.style.display = 'none';
             }
 
             viewMoreBtn.addEventListener('click', () => {
@@ -104,33 +102,36 @@ function fetchAndDisplayBlogs() {
                     }
                 });
 
-                if (revealedCount < 3) {
+                if (hiddenBlogs.every(blog => blog.classList.contains('visible'))) {
                     viewMoreBtn.style.display = 'none';
+                    viewAllBtn.style.display = 'none';
                 }
 
                 collapseBtn.style.display = 'block';
             });
 
             viewAllBtn.addEventListener('click', () => {
-                hiddenBlogs.forEach(blog => {
-                    blog.classList.add('visible');
-                });
+                hiddenBlogs.forEach(blog => blog.classList.add('visible'));
 
-                viewMoreBtn.style.display = 'none';
-                viewAllBtn.style.display = 'none';
+                // After revealing all, check if any blog is not visible. If all are visible, hide the "View All" button.
+                if (hiddenBlogs.every(blog => blog.classList.contains('visible'))) {
+                    viewMoreBtn.style.display = 'none';
+                    viewAllBtn.style.display = 'none';
+                }
+
                 collapseBtn.style.display = 'block';
             });
 
             collapseBtn.addEventListener('click', () => {
-                hiddenBlogs.forEach(blog => {
-                    blog.classList.remove('visible');
-                });
+                hiddenBlogs.forEach(blog => blog.classList.remove('visible'));
 
-                viewMoreBtn.style.display = 'block';
-                viewAllBtn.style.display = 'block';
+                if (hiddenBlogs.length > 0) {
+                    viewMoreBtn.style.display = 'block';
+                    viewAllBtn.style.display = 'block'; // Show "View All" button again if there are hidden blogs
+                }
                 collapseBtn.style.display = 'none';
                 window.scrollTo({
-                    top: document.getElementById('blog').offsetTop - 50, 
+                    top: document.getElementById('blogs').offsetTop - 50,
                     behavior: 'smooth'
                 });
             });
@@ -138,7 +139,6 @@ function fetchAndDisplayBlogs() {
         .catch(error => console.error('Error fetching blog data:', error));
 }
 
-// Fetch and display project entries
 let observerCallCount = 0;
 function fetchAndDisplayProjects() {
     fetch('projects.json')
@@ -149,9 +149,9 @@ function fetchAndDisplayProjects() {
             const viewAllBtn = document.getElementById('view-all-projects-btn');
             const collapseBtn = document.getElementById('collapse-projects-btn');
             let visibleCount = 0;
-            const hiddenProjects = [];
+            let hiddenProjects = [];
 
-            data.forEach((project, index) => {
+            data.forEach(project => { 
                 if (project.hidden) return;
 
                 const projectCard = document.createElement('div');
@@ -160,19 +160,15 @@ function fetchAndDisplayProjects() {
                     projectCard.classList.add('visible');
                     visibleCount++;
                     if (observerCallCount < 3) {
-                        console.log('true')
                         setupIntersectionObserver();
                         observerCallCount++;
-                    }
-                    else {
-                        console.log('false')
+                    } else {
                         observerCallCount = 0;
                     }
-                    
                 } else {
                     hiddenProjects.push(projectCard);
                 }
-                
+
                 projectCard.innerHTML = `
                     <div class="project-type">${project.category}</div>
                     <img src="${project.image}" alt="Project Image" class="project-image">
@@ -183,9 +179,7 @@ function fetchAndDisplayProjects() {
                     <div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                 `;
                 projectGrid.appendChild(projectCard);
-
             });
-            
 
             // Initialize Masonry after all project cards are appended
             const msnry = new Masonry(projectGrid, {
@@ -194,7 +188,6 @@ function fetchAndDisplayProjects() {
                 percentPosition: true,
                 transitionDuration: '0.3s',
                 horizontalOrder: true
-
             });
 
             // Layout Masonry after images have loaded
@@ -202,87 +195,82 @@ function fetchAndDisplayProjects() {
                 msnry.layout();
             });
 
-
-            if (hiddenProjects.length > 0) {
-                viewMoreBtn.style.display = 'block';
-            }
+            updateButtonVisibility();
 
             viewMoreBtn.addEventListener('click', () => {
-                let revealedCount = 0;
-                const fragment = document.createDocumentFragment();
-
-                hiddenProjects.forEach(project => {
-                    if (revealedCount < 3 && !project.classList.contains('visible')) {
+                let newlyVisibleCount = 0;
+                for (let project of hiddenProjects) {
+                    if (!project.classList.contains('visible') && newlyVisibleCount < 3) {
                         project.classList.add('visible');
-                        fragment.appendChild(project);
-                        revealedCount++;
+                        projectGrid.appendChild(project);
+                        newlyVisibleCount++;
                     }
-                });
-
-                projectGrid.appendChild(fragment);
-
+                }
+            
+                // Remove projects that are now visible from the hiddenProjects array
+                hiddenProjects = hiddenProjects.filter(project => !project.classList.contains('visible'));
+            
                 // Append new items and re-layout Masonry
                 imagesLoaded(projectGrid, () => {
-                    msnry.appended(fragment.children);
                     msnry.layout();
                 });
-                
-
-                if (revealedCount < 3) {
-                    viewMoreBtn.style.display = 'none';
-                }
-
-                collapseBtn.style.display = 'block';
+            
+                updateButtonVisibility();
             });
 
             viewAllBtn.addEventListener('click', () => {
-                const fragment = document.createDocumentFragment();
-
                 hiddenProjects.forEach(project => {
                     project.classList.add('visible');
-                    fragment.appendChild(project);
                 });
 
-                projectGrid.appendChild(fragment);
-
-                // Append new items and re-layout Masonry
+                // Re-layout Masonry with all items visible
                 imagesLoaded(projectGrid, () => {
-                    msnry.appended(fragment.children);
                     msnry.layout();
                 });
 
-                viewMoreBtn.style.display = 'none';
-                viewAllBtn.style.display = 'none';
-                collapseBtn.style.display = 'block';
+                updateButtonVisibility();
             });
 
             collapseBtn.addEventListener('click', () => {
-                hiddenProjects.forEach(project => {
-                    project.classList.remove('visible');
+                const visibleProjects = document.querySelectorAll('.project-card.visible');
+                visibleProjects.forEach((project, index) => {
+                    // Keep the first three projects visible
+                    if (index > 2) {
+                        project.classList.remove('visible');
+                        hiddenProjects.push(project);
+                    }
                 });
-    
+            
                 viewMoreBtn.style.display = 'block';
                 viewAllBtn.style.display = 'block';
                 collapseBtn.style.display = 'none';
+            
                 window.scrollTo({
-                    top: document.getElementById('project').offsetTop - 50, 
+                    top: document.getElementById('projects').offsetTop - 50,
                     behavior: 'smooth'
                 });
-                
-                // Initialize Masonry after all project cards are appended
-                const msnry = new Masonry(projectGrid, {
-                    itemSelector: '.project-card',
-                    columnWidth: '.project-card',
-                    percentPosition: true,
-                    transitionDuration: '0.3s'
+            
+                // Re-initialize Masonry layout
+                imagesLoaded(projectGrid, () => {
+                    msnry.layout();
                 });
-
             });
+
+            function updateButtonVisibility() {
+                const totalVisible = document.querySelectorAll('.project-card.visible').length;
+                if (totalVisible === data.length) {
+                    viewMoreBtn.style.display = 'none';
+                    viewAllBtn.style.display = 'none';
+                } else {
+                    viewMoreBtn.style.display = 'block';
+                    viewAllBtn.style.display = 'block';
+                }
+                collapseBtn.style.display = 'block';
+            }
 
         })
         .catch(error => console.error('Error fetching project data:', error));
 }
-
 
 function setupDarkModeToggle() {
     const bodyClassList = document.body.classList;

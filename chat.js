@@ -405,4 +405,4 @@ function detectDevTools() {
     }
 }
 
-// setInterval(detectDevTools, 1000);
+setInterval(detectDevTools, 1000);

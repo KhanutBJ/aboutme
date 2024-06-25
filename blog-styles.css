@@ -237,6 +237,8 @@ nav ul li a:hover, nav ul span:hover {
 .post-image,
 .video-placeholder iframe {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     margin-bottom: 20px;
 }
 

@@ -11,6 +11,7 @@ function saveChatHistory() {
     sessionStorage.setItem('messages', document.getElementById('messages').innerHTML);
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
     // Load chat history if available
     if (sessionStorage.getItem('messages')) {
@@ -38,6 +39,8 @@ function toggleChat() {
     const chatContainer = document.getElementById('chat-container');
     chatPopup.style.display = chatPopup.style.display === 'none' || chatPopup.style.display === '' ? 'flex' : 'none';
     chatContainer.style.opacity = 0.9;
+    const messagesContainer = document.getElementById('messages');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
 // Add event listener to detect scroll and adjust opacity
@@ -372,20 +375,24 @@ function createClickableSources(text) {
 }
 
 
+
 // Event listeners for "Enter" key and send button click
 document.getElementById('user-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         sendMessage();
     }
 });
-// Add event listeners to the input field for both 'click' and 'keyup' events
-document.getElementById('user-input').addEventListener('click', increaseOpacity);
-document.getElementById('user-input').addEventListener('keyup', increaseOpacity);
+
 
 function increaseOpacity() {
     const chatContainer = document.getElementById('chat-container');
-    chatContainer.style.opacity = 0.9; // Increase opacity on click or while typing
+    chatContainer.style.opacity = 0.9; 
 }
+
+document.getElementById('user-input').addEventListener('click', increaseOpacity);
+document.getElementById('user-input').addEventListener('keyup', increaseOpacity);
+document.getElementById('messages').addEventListener('scroll', increaseOpacity);
+
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 
 // Prevent dev tool
@@ -405,4 +412,4 @@ function detectDevTools() {
     }
 }
 
-setInterval(detectDevTools, 1000);
+// setInterval(detectDevTools, 1000);

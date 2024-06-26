@@ -72,6 +72,10 @@ header {
     flex-wrap: wrap;
 }
 
+.top {
+    padding-top: 20px;
+}
+
 .profile {
     flex: 2;
     padding-right: 50px;
@@ -793,7 +797,7 @@ nav {
     }
     
     .details img {
-        transform: translate(-50%, 70%);
+        transform: translate(-65%, 90%);
     }
 
 }

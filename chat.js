@@ -13,6 +13,15 @@ function saveChatHistory() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Show welcome message if not already shown
+    if (!sessionStorage.getItem('welcomeMessageShown')) {
+        const welcomeMessage = document.createElement('div');
+        welcomeMessage.className = 'message bot';
+        welcomeMessage.innerHTML = '<div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div>';
+        document.getElementById('messages').appendChild(welcomeMessage);
+        sessionStorage.setItem('welcomeMessageShown', 'true');
+    }
+
     // Load chat history if available
     if (sessionStorage.getItem('messages')) {
         document.getElementById('messages').innerHTML = sessionStorage.getItem('messages');
@@ -22,15 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     pastUserInputs = JSON.parse(sessionStorage.getItem('pastUserInputs') || '[]');
     generatedResponses = JSON.parse(sessionStorage.getItem('generatedResponses') || '[]');
     contextHistory = JSON.parse(sessionStorage.getItem('contextHistory') || '[]');
-
-    // Show welcome message if not already shown
-    if (!sessionStorage.getItem('welcomeMessageShown')) {
-        const welcomeMessage = document.createElement('div');
-        welcomeMessage.className = 'message bot';
-        welcomeMessage.innerHTML = '<div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div>';
-        document.getElementById('messages').appendChild(welcomeMessage);
-        sessionStorage.setItem('welcomeMessageShown', 'true');
-    }
 });
 
 
@@ -440,4 +440,4 @@ function detectDevTools() {
     }
 }
 
-setInterval(detectDevTools, 1000);
+// setInterval(detectDevTools, 1000);

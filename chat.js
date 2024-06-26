@@ -260,33 +260,61 @@ function secureQuery(data, modelUrl) {
         });
 }
 
-function createClickableSources(text) {
+async function createClickableSources(text) {
+    const fileNames = ['background', 'blogs']; 
+    const fileData = {};
+
+    // Fetch JSON files and store data
+    await Promise.all(fileNames.map(async (fileName) => {
+        const response = await fetch(`${fileName}.json`);
+        const data = await response.json();
+        fileData[fileName] = new Set(data.map(entry => entry.id));
+    }));
+
+    // Helper function to check if href exists
+    const hrefExists = (source) => {
+        const [fileName, id] = source.split('/');
+        return fileData[fileName] && fileData[fileName].has(id);
+    };
+
+    // Regular expression pattern for sources
     const sourcePattern = /\(source: ([^\)]+)\)/g;
     let match;
-    let clickableText = text;
-  
-    while ((match = sourcePattern.exec(text)) !== null) {
-      const sources = match[1].split(', ').map(source => source.trim());
-      const clickableSources = sources.map(source => {
-        let href;
-        if (source.startsWith('background/')) {
-          href = `/#${source.replace('background/', '')}`;
-        } else if (source.startsWith('blogs/')) {
-          href = `blog.html?id=${source.replace('blogs/', '')}`;
-        } else {
-          href = `#${source.replace(/\//g, '-')}`;
-        }
-        return `<a href="${href}" class="source-link">${source}</a>`;
-      }).join(', ');
-  
-      clickableText = clickableText.replace(match[0], `(source: ${clickableSources})`);
-    }
-  
-    return clickableText;
-  }
-  
+    const matches = [];
 
-  async function sendMessage() {
+    // Collect all matches
+    while ((match = sourcePattern.exec(text)) !== null) {
+        matches.push(match);
+    }
+
+    // Process all matches
+    for (const match of matches) {
+        const sources = match[1].split(', ').map(source => source.trim());
+        const validSources = sources.filter(hrefExists);
+
+        if (validSources.length > 0) {
+            const clickableSources = validSources.map(source => {
+                let href;
+                if (source.startsWith('background/')) {
+                    href = `/#${source.replace('background/', '')}`;
+                } else if (source.startsWith('blogs/')) {
+                    href = `blog.html?id=${source.replace('blogs/', '')}`;
+                } else {
+                    href = `#${source.replace(/\//g, '-')}`;
+                }
+                return `<a href="${href}" class="source-link">${source}</a>`;
+            }).join(', ');
+            text = text.replace(match[0], `(source: ${clickableSources})`);
+        } else {
+            text = text.replace(match[0], '');
+        }
+    }
+
+    return text;
+}
+
+
+async function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     if (userInput.trim() === '') return;
 
@@ -354,7 +382,7 @@ function createClickableSources(text) {
             // Display Hugging Face API response
             const botMessage = document.createElement('div');
             botMessage.className = 'message bot';
-            const clickableResponse = createClickableSources(botResponse);
+            const clickableResponse = await createClickableSources(botResponse);
             botMessage.innerHTML = `<div class="icon">🤖</div><div class="chat-bubble">${clickableResponse}</div>`;
             document.getElementById('messages').appendChild(botMessage);
             const messagesContainer = document.getElementById('messages');
@@ -386,7 +414,7 @@ document.getElementById('user-input').addEventListener('keypress', function (e) 
 
 function increaseOpacity() {
     const chatContainer = document.getElementById('chat-container');
-    chatContainer.style.opacity = 0.9; 
+    chatContainer.style.opacity = 0.9;
 }
 
 document.getElementById('user-input').addEventListener('click', increaseOpacity);
@@ -412,4 +440,4 @@ function detectDevTools() {
     }
 }
 
-// setInterval(detectDevTools, 1000);
+setInterval(detectDevTools, 1000);

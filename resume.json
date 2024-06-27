@@ -1,0 +1,90 @@
+[
+    {
+        "id": "profile",
+        "content": {
+            "name": "Khanut Boonjong (NOT UPDATED)",
+            "phone": "+66 (0) 95-631-6993",
+            "location": "Bangkok, Thailand",
+            "email": "khanut.boo@student.mahidol.ac.th",
+            "linkedin": "https://linkedin.com/in/khanut-boonjong",
+            "website": "https://khanutbj.xyz"
+        }
+    },
+    {
+        "id": "objective",
+        "content": "Medical Student with X+ years of experience in XXX, seeking full-time XXX roles."
+    },
+    {
+        "id": "skills",
+        "content": [
+            { "category": "Technical Skills", "skills": ["A", "B", "C", "D"] },
+            { "category": "Soft Skills", "skills": ["A", "B", "C", "D"] },
+            { "category": "XYZ", "skills": ["A", "B", "C", "D"] }
+        ]
+    },
+    {
+        "id": "education",
+        "content": [
+            { "degree": "Master of Computer Science", "institution": "Stanford University", "period": "Expected 2020", "coursework": ["A", "B", "C", "D"] },
+            { "degree": "Bachelor of Computer Science", "institution": "Stanford University", "period": "2014 - 2017" }
+        ]
+    },
+    {
+        "id": "experience",
+        "content": [
+            {
+                "role": "Role Name",
+                "period": "Jan 2017 - Jan 2019",
+                "company": "Company Name",
+                "location": "San Francisco, CA",
+                "responsibilities": [
+                    "Achieved X% growth for XYZ using A, B, and C skills.",
+                    "Led XYZ which led to X% of improvement in ABC",
+                    "Developed XYZ that did A, B, and C using X, Y, and Z."
+                ]
+            },
+            {
+                "role": "Role Name",
+                "period": "Jan 2017 - Jan 2019",
+                "company": "Company Name",
+                "location": "San Francisco, CA",
+                "responsibilities": [
+                    "Achieved X% growth for XYZ using A, B, and C skills.",
+                    "Led XYZ which led to X% of improvement in ABC",
+                    "Developed XYZ that did A, B, and C using X, Y, and Z."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "projects",
+        "content": [
+            {
+                "title": "Hiring Search Tool",
+                "description": "Built a tool to search for Hiring Managers and Recruiters by using ReactJS, NodeJS, Firebase and boolean queries. Over 25000 people have used it so far, with 5000+ queries being saved and shared, and search results even better than LinkedIn!",
+                "link": "https://hiring-search.careerflow.ai/"
+            },
+            {
+                "title": "Short Project Title",
+                "description": "Build a project that does something and had quantified success using A, B, and C. This project's description spans two lines and also won an award."
+            },
+            {
+                "title": "Short Project Title",
+                "description": "Build a project that does something and had quantified success using A, B, and C. This project's description spans two lines and also won an award."
+            }
+        ]
+    },
+    {
+        "id": "extra-curricular",
+        "content": [
+            "Actively write <a href=\"https://www.faangpath.com/blog/\">blog posts</a> and social media posts (<a href=\"https://www.tiktok.com/@faangpath\">TikTok</a>, <a href=\"https://www.instagram.com/faangpath/?hl=en\">Instagram</a>) viewed by over 20K+ job seekers per week to help people with best practices to land their dream jobs.",
+            "Sample bullet point."
+        ]
+    },
+    {
+        "id": "leadership",
+        "content": [
+            "Admin for the <a href=\"https://discord.com/invite/WWbjEaZ\">FAANGPath Discord community</a> with over 6000+ job seekers and industry mentors. Actively involved in facilitating online events, career conversations, and more alongside other admins and a team of volunteer moderators!"
+        ]
+    }
+]

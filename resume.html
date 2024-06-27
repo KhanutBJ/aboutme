@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <title>Resume</title>
+    <style>
+        :root {
+            --scale: 0.9;
+        }
+
+        body {
+            font-family: "Computer Modern Serif", sans-serif;
+            margin: calc(0.25in * var(--scale));
+            line-height: calc(1.6 * var(--scale));
+        }
+
+        div {
+            page-break-inside: avoid;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: calc(25px * var(--scale));
+            text-align: center;
+        }
+
+        h2 {
+            font-size: calc(14px * var(--scale));
+            border-bottom: 1px solid #000;
+            padding-bottom: calc(0.1em * var(--scale));
+            margin-bottom: calc(0.5em * var(--scale));
+        }
+
+        li {
+            font-size: 0.8em;
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+
+        td {
+            font-size: 0.8em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: calc(1em * var(--scale));
+        }
+
+        .contact-info div,
+        .contact-info a {
+            display: inline-block;
+            margin: calc(3px * var(--scale)) calc(3px * var(--scale));
+        }
+
+        .section {
+            margin-bottom: calc(1em * var(--scale));
+        }
+
+        .section p,
+        .section ul {
+            margin: 0;
+        }
+
+        .skills-table {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+
+        .skills-table th,
+        .skills-table td {
+            padding: calc(0.1em * var(--scale));
+        }
+
+        .experience ul,
+        .projects ul,
+        .leadership ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience li,
+        .projects li,
+        .leadership li {
+            margin-bottom: calc(0.2em * var(--scale));
+        }
+
+        .experience-item,
+        .project-item,
+        .leadership-item {
+            margin-bottom: calc(1em * var(--scale));
+        }
+
+        .experience-item h3,
+        .project-item h3,
+        .leadership-item h3 {
+            margin: 0;
+            font-size: calc(14px * var(--scale));
+            font-weight: bold;
+        }
+
+        .experience-item h4,
+        .project-item h4,
+        .leadership-item h4 {
+            margin: 0;
+            font-size: calc(13px * var(--scale));
+            font-style: italic;
+            color: gray;
+        }
+
+        .experience-item ul,
+        .project-item ul {
+            list-style: disc;
+            padding-left: calc(20px * var(--scale));
+        }
+
+        .preview-container {
+            margin-top: calc(50px * var(--scale));
+            margin-left: auto;
+            margin-right: auto;
+            padding: calc(10px * var(--scale));
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            text-align: center;
+            height: 500px;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .preview-container iframe {
+            width: 80%;
+            height: 100%;
+            border: none;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: calc(20px * var(--scale));
+        }
+
+        .button-container button {
+            padding: calc(10px * var(--scale)) calc(20px * var(--scale));
+            font-size: calc(14px * var(--scale));
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="name"></h1>
+    <div class="contact-info">
+        <div id="phone"></div>|<div id="location"></div><br>
+        <a id="email" href=""></a>|
+        <a id="linkedin" href=""></a>|
+        <a id="website" href=""></a>
+    </div>
+
+    <div class="section" id="objective">
+        <h2>OBJECTIVE</h2>
+        <p id="objective-content"></p>
+    </div>
+
+    <div class="section" id="education">
+        <h2>EDUCATION</h2>
+        <div id="education-content"></div>
+    </div>
+
+    <div class="section" id="skills">
+        <h2>SKILLS</h2>
+        <table class="skills-table" id="skills-content"></table>
+    </div>
+
+    <div class="section">
+        <h2>EXPERIENCE</h2>
+        <div id="experience"></div>
+    </div>
+
+    <div class="section">
+        <h2>PROJECTS</h2>
+        <div id="projects"></div>
+    </div>
+
+    <div class="section" id="extra-curricular">
+        <h2>EXTRA-CURRICULAR ACTIVITIES</h2>
+        <ul></ul>
+    </div>
+
+    <div class="section" id="leadership">
+        <h2>LEADERSHIP</h2>
+        <ul></ul>
+    </div>
+</body>
+
+<div class="preview-container">
+    <iframe id="pdf-preview"></iframe>
+</div>
+
+<div class="button-container">
+    <button id="download-button">Download PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    async function getBackground() {
+        try {
+            const response = await fetch('resume.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            const getContent = (id) => data.find(item => item.id === id).content;
+
+            // Profile Section
+            const profileContent = getContent('profile');
+            document.querySelector('#name').textContent = profileContent.name;
+            document.querySelector('#phone').textContent = profileContent.phone;
+            document.querySelector('#location').textContent = profileContent.location;
+            document.querySelector('#email').textContent = profileContent.email;
+            document.querySelector('#email').href = `mailto:${profileContent.email}`;
+            document.querySelector('#linkedin').textContent = profileContent.linkedin;
+            document.querySelector('#linkedin').href = profileContent.linkedin;
+            document.querySelector('#website').textContent = profileContent.website;
+            document.querySelector('#website').href = profileContent.website;
+
+            // Objective Section
+            const objectiveContent = getContent('objective');
+            document.querySelector('#objective-content').textContent = objectiveContent;
+
+            // Skills Section
+            const skillsContent = getContent('skills');
+            const skillsTable = document.querySelector('#skills-content');
+            skillsTable.innerHTML = '';
+            skillsContent.forEach(skill => {
+                const row = document.createElement('tr');
+                const cell1 = document.createElement('td');
+                const cell2 = document.createElement('td');
+                cell1.textContent = skill.category;
+                cell2.textContent = skill.skills.join(', ');
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                skillsTable.appendChild(row);
+            });
+
+            // Education Section
+            const educationContent = getContent('education');
+            const educationContainer = document.querySelector('#education-content');
+            educationContainer.innerHTML = '';
+            educationContent.forEach(edu => {
+                const p = document.createElement('p');
+                p.innerHTML = `<strong>${edu.degree}</strong>, ${edu.institution} <span style="float:right;">${edu.period}</span>`;
+                educationContainer.appendChild(p);
+            });
+
+            // Experience Section
+            const experienceContent = getContent('experience');
+            const experienceContainer = document.querySelector('#experience');
+            experienceContent.forEach(exp => {
+                const expDiv = document.createElement('div');
+                expDiv.classList.add('experience-item');
+
+                const roleAndPeriod = document.createElement('h3');
+                roleAndPeriod.innerHTML = `${exp.role} <span style="float:right;">${exp.period}</span>`;
+                expDiv.appendChild(roleAndPeriod);
+
+                const companyAndLocation = document.createElement('h4');
+                companyAndLocation.textContent = `${exp.company}, ${exp.location}`;
+                expDiv.appendChild(companyAndLocation);
+
+                const ul = document.createElement('ul');
+                exp.responsibilities.forEach(res => {
+                    const li = document.createElement('li');
+                    li.textContent = res;
+                    ul.appendChild(li);
+                });
+                expDiv.appendChild(ul);
+                experienceContainer.appendChild(expDiv);
+            });
+
+            // Projects Section
+            const projectsContent = getContent('projects');
+            const projectsContainer = document.querySelector('#projects');
+            projectsContainer.innerHTML = '';
+            projectsContent.forEach(proj => {
+                const projDiv = document.createElement('div');
+                projDiv.classList.add('project-item');
+                projDiv.innerHTML = `<h3>${proj.title}.</h3><p>${proj.description} <a href="${proj.link}">(Try it here)</a></p>`;
+                projectsContainer.appendChild(projDiv);
+            });
+
+            // Extra-Curricular Activities
+            const extraCurricularContent = getContent('extra-curricular');
+            const extraCurricularContainer = document.querySelector('#extra-curricular ul');
+            extraCurricularContainer.innerHTML = '';
+            extraCurricularContent.forEach(activity => {
+                const li = document.createElement('li');
+                li.innerHTML = activity;
+                extraCurricularContainer.appendChild(li);
+            });
+
+            // Leadership Section
+            const leadershipContent = getContent('leadership');
+            const leadershipContainer = document.querySelector('#leadership ul');
+            leadershipContainer.innerHTML = '';
+            leadershipContent.forEach(lead => {
+                const li = document.createElement('li');
+                li.innerHTML = lead;
+                leadershipContainer.appendChild(li);
+            });
+
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    let generatedPDFBlobUrl = null; // Global variable to store the generated PDF Blob URL
+
+    async function generateAndDisplayPDF() {
+        const bodyClone = document.body.cloneNode(true);
+        const downloadButtonClone = bodyClone.querySelector('#download-button');
+        const pdfPreview = bodyClone.querySelector('.preview-container'); 
+        downloadButtonClone.remove();
+        pdfPreview.remove();
+
+        const opt = {
+            margin: 0.1,
+            filename: 'resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        // Use html2pdf to generate a PDF and then get a Blob URL
+        html2pdf().from(bodyClone).set(opt).toPdf().get('pdf').then(function (pdf) {
+            console.log('pdf generated');
+            var iframe = document.getElementById('pdf-preview');
+            generatedPDFBlobUrl = URL.createObjectURL(pdf.output('blob')); // Store the Blob URL globally
+            iframe.src = generatedPDFBlobUrl;
+            
+        });
+    }
+
+    function downloadPDF() {
+        if (generatedPDFBlobUrl) {
+            // Create an <a> element to initiate the download
+            const downloadLink = document.createElement('a');
+            downloadLink.href = generatedPDFBlobUrl;
+            downloadLink.download = 'resume-khanut-boonjong.pdf';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        } else {
+            console.error('PDF has not been generated yet.');
+        }
+    }
+
+    window.addEventListener('load', async() => {
+        await getBackground();
+        await generateAndDisplayPDF();
+    });
+
+    document.getElementById('download-button').addEventListener('click', downloadPDF);
+
+</script>
+</body>
+
+</html>

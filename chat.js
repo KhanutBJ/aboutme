@@ -403,7 +403,6 @@ async function sendMessage() {
 }
 
 
-
 // Event listeners for "Enter" key and send button click
 document.getElementById('user-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -425,19 +424,23 @@ document.getElementById('send-btn').addEventListener('click', sendMessage);
 
 // Prevent dev tool
 function detectDevTools() {
-    const threshold = 160;
-    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-    if (widthThreshold || heightThreshold) {
-        alert('Developer tools are open. Please close them to continue.');
-        setInterval(() => {
+    setInterval(() => {
+        const t0 = Date.now();
+        debugger; // This will cause a pause if dev tools are open
+        const t1 = Date.now();
+        if (t0 !== t1) {
+            console.log('DevTools is open.');
+            // Additional actions when DevTools is detected
+            alert('Developer tools are open. Please close them to continue.');
             window.blur();
             window.focus();
-        }, 100);
-        setTimeout(() => {
-            location.reload();
-        }, 500);
-    }
+            setTimeout(() => {
+                location.reload();
+            }, 500);
+        } else {
+            console.log('DevTools is not open.');
+        }
+    }, 1000);
 }
 
-setInterval(detectDevTools, 1000);
+detectDevTools();

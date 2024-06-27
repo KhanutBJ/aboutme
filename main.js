@@ -186,7 +186,7 @@ function fetchAndDisplayProjects() {
                 itemSelector: '.project-card',
                 columnWidth: '.project-card',
                 percentPosition: true,
-                transitionDuration: '0.3s',
+                transitionDuration: '0.2s',
                 horizontalOrder: true
             });
 
@@ -275,8 +275,6 @@ function fetchAndDisplayProjects() {
 function setupDarkModeToggle() {
     const bodyClassList = document.body.classList;
     const modeToggle = document.getElementById('mode-toggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
 
     // Initialize mode based on the time of the day
     const now = new Date();
@@ -287,24 +285,11 @@ function setupDarkModeToggle() {
     } else {
         bodyClassList.remove('dark-mode');
     }
-    toggleIcons(bodyClassList.contains('dark-mode'));
 
     // Toggle dark mode manually
     modeToggle.addEventListener('click', () => {
         bodyClassList.toggle('dark-mode');
-        toggleIcons(bodyClassList.contains('dark-mode'));
     });
-
-    // Helper function to toggle icons based on the mode
-    function toggleIcons(isDarkMode) {
-        if (isDarkMode) {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        }
-    }
 }
 
 function getBackground() {
@@ -395,6 +380,8 @@ function getBackground() {
                 certificatesContainer.appendChild(div);
             });
 
+            // code for resume builder from all these background
+
             // Contact Section
             const contactContainer = document.querySelector('.contact-container');
             getContent('contact').forEach(contact => {
@@ -407,7 +394,6 @@ function getBackground() {
         })
         .catch(error => console.error('Error fetching data:', error));
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
     getBackground();

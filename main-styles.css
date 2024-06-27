@@ -20,6 +20,8 @@ html {
     --green-tag: #a7f5bc;
     --blue-tag: #e0f7fa;
     --blue-text: #0f62fe;
+    --sun-mode: none;
+    --moon-mode: block;
 }
 
 body.dark-mode {
@@ -40,6 +42,8 @@ body.dark-mode {
     --green-tag: #393939; 
     --blue-tag: #393939; 
     --blue-text: #ffffff; 
+    --sun-mode: block;
+    --moon-mode: none;
 }
 
 body {
@@ -74,6 +78,13 @@ header {
 
 .top {
     padding-top: 20px;
+}
+
+.sun-icon {
+    display: var(--sun-mode);
+}
+.moon-icon {
+    display: var(--moon-mode);
 }
 
 .profile {
@@ -132,13 +143,11 @@ header {
     width: 250px;
     height: 250px; 
     object-fit: cover;
-    translate: 150px -200px;
+    translate: 150px -250px;
     /* object-position: center; */
     /* margin-left: 50px; */
     /* margin-top: -100px; */
 }
-
-
 
 footer {
     text-align: center;
@@ -529,24 +538,28 @@ button:focus {
     transform: translateY(20px); 
     display: none;
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin: 10px;
     box-sizing: border-box;
 }
 
+.resume {
+    text-align: center;
+}
+
 /* Responsive layout */
-@media (min-width: 1200px) {
+@media (min-width: 750px) {
     .project-card {
         width: calc(33.333% - 20px); 
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 500px) and (max-width: 749x) {
     .project-card {
         width: calc(50% - 20px); 
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 499px) {
     .project-card {
         width: calc(100% - 20px); 
     }
@@ -680,7 +693,7 @@ nav {
 }
 
 .quote-container {
-    padding: 40px 0;
+    padding: 20px;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -723,13 +736,11 @@ nav {
 }
 
 
-
-/* Media Queries for Vertical Orientation (Portrait) */
-@media (max-width: 768px) and (orientation: portrait) {
-
+@media (min-width: 500px) and (max-width: 768px) and (orientation: portrait) {
+/* 
     .welcome-section {
         padding-top: 150px;
-    }
+    } */
 
     .contact-container {
         display: grid;
@@ -748,9 +759,9 @@ nav {
 }
 
 
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 825px) and (orientation: portrait) {
 
-    .welcome-section {
+    .welcome-section p{
         padding-top: 200px;
     }
 
@@ -760,7 +771,7 @@ nav {
     }
 
     .details img {
-        transform: translate(-10%, 100%);
+        transform: translate(-10%, 130%);
     }
 }
 
@@ -776,7 +787,7 @@ nav {
     }
 }
 
-@media (max-width: 1024px) and (orientation: portrait) {
+@media  (min-device-width : 821px) and (max-width: 1024px) and (orientation: portrait) {
     
     .welcome-section {
         padding-top: 30%;
@@ -784,21 +795,21 @@ nav {
     }
     
     .details img {
-        transform: translate(-50%, 70%);
+        transform: translate(-50%, 80%);
     }
 
 }
 
-@media (max-height: 1366px) and (orientation: portrait) {
+@media (min-device-width : 821px) and (max-width: 1024px) and (orientation: portrait) {
     
     .welcome-section {
-        padding-top: 10%;
-        padding-bottom: 10%;
+        padding-top: 20%;
+        padding-bottom: 0%;
     }
     
-    .details img {
+    /* .details img {
         transform: translate(-65%, 90%);
-    }
+    } */
 
 }
 
@@ -807,17 +818,17 @@ nav {
 
 
     .details img {
-        transform: translate(-60%, 100%);
+        transform: translate(-60%, 120%);
     }
 
     .welcome-section {
-        padding-top: 150px;
-        padding-bottom: 100px;
+        margin-top: -50%;
+        padding-bottom: 70px;
     }
 
-    .welcome-section p {
+    /* .welcome-section p {
         transform: translateX(-12%);
-    }
+    } */
 
     .contact-container {
         display: grid;
@@ -972,36 +983,9 @@ nav {
     }
 }
 
-/* @media (max-width: 360px) and (orientation: portrait) {
-
-    .details img {
-        transform: translate(-50%, 100%);
-    }
-
-} */
-
-/* @media (max-width: 912px) and (orientation: portrait) {
-
-    .welcome-section {
-        padding-top: 150px;
-    }
-
-    .details img {
-        transform: translate(-10%, 100%);
-    }
-
-} */
 
 
 @media (max-width: 344px) and (orientation: portrait) {
-
-    .details img {
-        transform: translate(-60%, 100%);
-    }
-
-}
-
-@media (max-width: 412px) and (orientation: portrait) {
 
     .details img {
         transform: translate(-60%, 100%);

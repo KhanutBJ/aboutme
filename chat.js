@@ -13,26 +13,26 @@ function saveChatHistory() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Show welcome message if not already shown
-    if (!sessionStorage.getItem('welcomeMessageShown')) {
-        const welcomeMessage = document.createElement('div');
-        welcomeMessage.className = 'message bot';
-        welcomeMessage.innerHTML = '<div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div>';
-        document.getElementById('messages').appendChild(welcomeMessage);
-        sessionStorage.setItem('welcomeMessageShown', 'true');
-    }
+    const welcomeMessageHTML = '<div class="message bot"><div class="icon">🤖</div><div class="chat-bubble">Hello! Welcome to KhanutBJ&#39;s website. How can I assist you today? </div></div>';
 
-    // Load chat history if available
-    if (sessionStorage.getItem('messages')) {
-        document.getElementById('messages').innerHTML = sessionStorage.getItem('messages');
+    // Load chat history if available, otherwise initialize with welcome message
+    let chatHistory = sessionStorage.getItem('messages');
+    if (!chatHistory) {
+        chatHistory = welcomeMessageHTML;
+        sessionStorage.setItem('messages', chatHistory);
+    } else if (!chatHistory.includes('Welcome to KhanutBJ&#39;s website')) {
+        // Prepend welcome message if not already included
+        chatHistory = welcomeMessageHTML + chatHistory;
+        sessionStorage.setItem('messages', chatHistory);
     }
+    document.getElementById('messages').innerHTML = chatHistory;
 
+    // Initialize or load other session data
     contextData = JSON.parse(sessionStorage.getItem('contextData') || '[]');
     pastUserInputs = JSON.parse(sessionStorage.getItem('pastUserInputs') || '[]');
     generatedResponses = JSON.parse(sessionStorage.getItem('generatedResponses') || '[]');
     contextHistory = JSON.parse(sessionStorage.getItem('contextHistory') || '[]');
 });
-
 
 function toggleChat() {
     const chatPopup = document.getElementById('chat-popup');
@@ -422,23 +422,24 @@ document.getElementById('messages').addEventListener('scroll', increaseOpacity);
 
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 
-// Prevent dev tool
+
 function detectDevTools() {
+    let firstRun = true; 
     setInterval(() => {
+        if (firstRun) {
+            firstRun = false; 
+            return; 
+        }
         const t0 = Date.now();
-        debugger; // This will cause a pause if dev tools are open
+        debugger; 
         const t1 = Date.now();
         if (t0 !== t1) {
-            console.log('DevTools is open.');
-            // Additional actions when DevTools is detected
-            alert('Developer tools are open. Please close them to continue.');
             window.blur();
             window.focus();
             setTimeout(() => {
                 location.reload();
             }, 500);
         } else {
-            console.log('DevTools is not open.');
         }
     }, 1000);
 }

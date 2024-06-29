@@ -96,8 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupDarkModeToggle() {
         const bodyClassList = document.body.classList;
         const modeToggle = document.getElementById('mode-toggle');
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
     
         // Initialize mode based on the time of the day
         const now = new Date();
@@ -108,24 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             bodyClassList.remove('dark-mode');
         }
-        toggleIcons(bodyClassList.contains('dark-mode'));
     
         // Toggle dark mode manually
         modeToggle.addEventListener('click', () => {
             bodyClassList.toggle('dark-mode');
-            toggleIcons(bodyClassList.contains('dark-mode'));
         });
-    
-        // Helper function to toggle icons based on the mode
-        function toggleIcons(isDarkMode) {
-            if (isDarkMode) {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
-            } else {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-            }
-        }
     }
 
     setupDarkModeToggle(); // Call setupDarkModeToggle to initialize dark mode

@@ -15,6 +15,8 @@
     --highlight-color: #ffffff;
     --meta-color: #555;
     --green-text: #007e33;
+    --sun-mode: none;
+    --moon-mode: block;
 }
 
 body.dark-mode {
@@ -34,6 +36,8 @@ body.dark-mode {
     --highlight-color: #78a9ff;
     --meta-color: #ffffff;
     --green-text: #ffffff;
+    --sun-mode: block;
+    --moon-mode: none;
 }
 
 body {
@@ -64,6 +68,12 @@ header {
     box-sizing: border-box;
 }
 
+.sun-icon {
+    display: var(--sun-mode);
+}
+.moon-icon {
+    display: var(--moon-mode);
+}
 
 .logo a {
     font-size: 20px;

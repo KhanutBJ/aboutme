@@ -4,7 +4,7 @@
         "category": "Hackathon",
         "image": "background.jpg",
         "title": "Personalized Object Recognition",
-        "date": "13 June 2024",
+        "date": "13 Jun 2024",
         "info": "Azure cloud web app which allows a user to teach and recognize any personal objects using CLIP and vector search.",
         "tags": ["Azure", "Flask", "Object recognition", "CLIP", "Vector search"],
         "hidden": false
@@ -20,13 +20,13 @@
         "hidden": false
     },
     {
-        "id": "TBA",
-        "category": "Release",
+        "id": "nexus",
+        "category": "App",
         "image": "background.jpg",
-        "title": "TBA",
-        "date": "TBA",
-        "info": "TBA",
-        "tags": ["TBA"],
+        "title": "Nexus - mobile app for graoh analysis",
+        "date": "6 Jul 2024 ",
+        "info": "A react native app for graph analysis and visualization",
+        "tags": ["app", "graph-analysis", "react native"],
         "hidden": false
     },
     {

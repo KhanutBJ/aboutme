@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (item.type === 'video') {
                     const div = document.createElement('div');
                     div.className = 'video-placeholder';
-                    div.innerHTML = `<iframe width="560" height="315" src="${item.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    div.innerHTML = `<iframe width="560" height="315" src="${item.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen;></iframe>`;
                     
                     if (item.description) {
                         const description = document.createElement('p');

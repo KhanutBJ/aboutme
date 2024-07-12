@@ -3,51 +3,70 @@
         "id": "ms-hack",
         "title": "A Cloud Solution for Personalized Object Recognition",
         "date": "13 June 2024",
-        "tags": ["AI", "Cloud", "Azure", "Accessibility", "Business"],
+        "tags": [
+            "AI",
+            "Cloud",
+            "Azure",
+            "Accessibility",
+            "Business"
+        ],
         "category": "Project",
         "description": "A cloud system that enables blind and visually-impaired people to teach and recognize personal objects",
         "content": [
             {
                 "type": "text",
-                "value": "Large language models are flourishing in the open, but most are still built in silos. Communities can form around a model, but their contributions can take months or years to be merged back to the base model — if they make their way back at all.",
+                "value": "Imagine you were blind and wanted to find your personal items. Today's technology in computer vision offers a variety of solutions, from human assistance apps like Be My Eyes to AI with vision capabilities like GP4-vision to help recognize objects. Let's say you might use these AI apps to find your ID card, only for it to say, 'a blue card with text on it,' and you have to guess which one it is.",
                 "position": "header"
             },
             {
                 "type": "image",
-                "src": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZcNWaNLzmJ9S27JkLyd1l73u-qTnQFKcdOPvqip0u7Ln1GmEPOM_5AXhNbkKWwUS3gvcigbqHB85cJJhVV4FWDP0YOyDJsJYA=s1600-rw-v1",
+                "src": "https://lh3.googleusercontent.com/drive-viewer/AKGpihbK1VmfAHO9-J2eVK54JEUfSO9p9BDoEAtHrbuCfKQk8FcrZRgWGHvx8o1EUnVVWouVGD2tuxSVKpOaFKpvXbDu2-IwLCCLaQ=s2560",
                 "alt": "Placeholder Image",
                 "position": "header"
             },
             {
                 "type": "text",
-                "value": "“There’s no good way to combine all of that innovation into a coherent whole,” said David Cox, vice president for AI models at IBM Research."
+                "value": "Our cloud solution bridges this gap by allowing blind and visually-impaired users to teach the AI to recognize their personal items accurately. Unlike general object recognition models, our system learns the unique features of each item, providing precise and meaningful descriptions. This enables users to confidently identify their belongings without second-guessing.",
+                "position": "body"
             },
+            
             {
                 "type": "video",
-                "src": "https://www.youtube.com/embed/your-video-id",
+                "src": "https://drive.google.com/file/d/1n0-XgqlzwZJHkbF2nYKFxaRGOwITnLA2/preview",
+                "description": "Users can teach their personal belongings to the system",
                 "position": "body"
             },
             {
                 "type": "video",
-                "src": "https://www.youtube.com/embed/your-video-id",
-                "description": "bruh",
+                "src": "https://drive.google.com/file/d/1lS2McOZpEncBoPGai7xNPn84UFTiwwdJ/preview",
+                "description": "Users can input what they want to find for the system to check with matched image vector from the database",
                 "position": "body"
             },
             {
                 "type": "text",
-                "value": "InstructLab, an open-source project launched by IBM and Red Hat in May, is designed to change that. It gives communities the tools to create and merge changes to LLMs without having to retrain the model from scratch. By making LLMs more like any other open-source software project, IBM and Red Hat hope to democratize access to generative AI."
-            },
-            {
-                "type": "image",
-                "src": "https://via.placeholder.com/800x400",
-                "alt": "Placeholder Image",
+                "value": "The project leverages vector search techniques to store and retrieve image dat from personal items. By using CLIP model to extract zero-shot image embeddings, the system can extract features and can be taught to recognize items matter most to users. This not only enhances accessibility but also empowers users to be more independent in their daily lives.",
                 "position": "body"
             },
             {
                 "type": "image",
-                "src": "https://via.placeholder.com/800x400",
+                "src": "https://lh3.googleusercontent.com/drive-viewer/AKGpihYIiD4MDmYAoDBVYhDd2GCsX-zGiBVVf4JRhDtKr_kgpCcVJpouiOeKXC0OR0p3n9LOzIf0ZHNSs7R3fIFXDByMwdZywRlApV4=s1600-rw-v1",
                 "alt": "Placeholder Image",
-                "position": "header"
+                "position": "body"
+            },
+            {
+                "type": "text",
+                "value": "Our innovative approach earned us a spot in the final round of Microsoft Thailand's AI for Accessibility Hackathon 2024. This recognition underscores the impact and potential of our solution to transform the lives of those with visual impairments.",
+                "position": "footer"
+            },
+            {
+                "type": "image",
+                "src": "https://lh3.googleusercontent.com/drive-viewer/AKGpihYFKPlE-dbEZnXvp4ahd2x9KqoqDAZUtH6Jz884n0AmIa4KBZNEWYh4_YAlIDUEpXC-roMPoaxI4Da93K7xy5HWqu_IlsRoCF8=s1600-rw-v1",
+                "alt": "Placeholder Image",
+                "position": "footer"
+            },
+            {
+                "type": "text",
+                "value": "Our innovative approach earned us a spot in the final round of Microsoft Thailand's AI for Accessibility Hackathon 2024. This recognition underscores the impact and potential of our solution to transform the lives of those with visual impairments."
             }
         ],
         "hidden": false
@@ -56,7 +75,12 @@
         "id": "daily-brainy",
         "title": "Daily Brainy: A Fully-automated Neuroscience Content Creator",
         "date": "15 May 2024",
-        "tags": ["Python", "Automation", "Content creator", "LLM"],
+        "tags": [
+            "Python",
+            "Automation",
+            "Content creator",
+            "LLM"
+        ],
         "category": "Project",
         "description": "I developed an automated system that edits and posts short videos about neuroscience daily on YouTube and Instagram",
         "content": [
@@ -102,13 +126,17 @@
                 "position": "header"
             }
         ],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "pmac-2024",
         "title": "Prince Mahidol Award Conference 2024",
         "date": "2 Feb 2024",
-        "tags": ["Conference", "Medicine", "Global health"],
+        "tags": [
+            "Conference",
+            "Medicine",
+            "Global health"
+        ],
         "category": "Project",
         "description": "I attended this prestigious global health conference on the topic of Geopolitics to learn more about Healthcare and Technology",
         "content": [
@@ -154,13 +182,17 @@
                 "position": "header"
             }
         ],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "brain-hack",
         "title": "Brain Hackathon",
         "date": "2 Feb 2024",
-        "tags": ["Pitching", "Business", "Neuroscience"],
+        "tags": [
+            "Pitching",
+            "Business",
+            "Neuroscience"
+        ],
         "category": "Project",
         "description": "I tried to solve this challenging problem of people with speech loss with a scalable solution",
         "content": [
@@ -206,13 +238,16 @@
                 "position": "header"
             }
         ],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "commed",
         "title": "Take a Sip At Community Medicine",
         "date": "2 Feb 2024",
-        "tags": ["Trip", "Medicine"],
+        "tags": [
+            "Trip",
+            "Medicine"
+        ],
         "category": "Project",
         "description": "This trip gave me with new perspectives on how lifestyle and culture influence health",
         "content": [
@@ -258,13 +293,17 @@
                 "position": "header"
             }
         ],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "brain-camp",
         "title": "Brain Code Camp",
         "date": "2 Feb 2024",
-        "tags": ["Summer school", "Project-based", "Neuroscience"],
+        "tags": [
+            "Summer school",
+            "Project-based",
+            "Neuroscience"
+        ],
         "category": "Project",
         "description": "My first try on fMRI and network analysis project",
         "content": [
@@ -316,7 +355,11 @@
         "id": "interface",
         "title": "Intern at Interfaces",
         "date": "11 Nov 2023",
-        "tags": ["Intern", "Machine learning", "Signal processing"],
+        "tags": [
+            "Intern",
+            "Machine learning",
+            "Signal processing"
+        ],
         "category": "Project",
         "description": "I assisted a pHD. student in processing and classifying IMU signals",
         "content": [
@@ -368,7 +411,11 @@
         "id": "conrad",
         "title": "Conrad Challenge",
         "date": "21 Aug 2023",
-        "tags": ["Pitching", "Business", "Innovation"],
+        "tags": [
+            "Pitching",
+            "Business",
+            "Innovation"
+        ],
         "category": "Project",
         "description": "My introduction to integrating science with business",
         "content": [
@@ -420,7 +467,11 @@
         "id": "asc-2022",
         "title": "Asian Science Camp",
         "date": "21 Aug 2023",
-        "tags": ["Camp", "Science", "Nobel laureates"],
+        "tags": [
+            "Camp",
+            "Science",
+            "Nobel laureates"
+        ],
         "category": "Project",
         "description": "This event highlighted significance of foundations and sparked my passion for basic science research.",
         "content": [
@@ -472,7 +523,12 @@
         "id": "aib",
         "title": "AI Builders",
         "date": "21 Aug 2023",
-        "tags": ["Summer school", "Project-based", "AI", "Deep learning"],
+        "tags": [
+            "Summer school",
+            "Project-based",
+            "AI",
+            "Deep learning"
+        ],
         "category": "Project",
         "description": "A turning point into learning new skill sets",
         "content": [
@@ -524,7 +580,11 @@
         "id": "research-kvis",
         "title": "Research At KVIS",
         "date": "21 Aug 2023",
-        "tags": ["Research", "Biology", "High school"],
+        "tags": [
+            "Research",
+            "Biology",
+            "High school"
+        ],
         "category": "Project",
         "description": "Experiencing this firsthand, I learned the true significance of perseverance and practicality.",
         "content": [

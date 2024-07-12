@@ -2,7 +2,7 @@
     {
         "id": "ms-hack",
         "category": "Hackathon",
-        "image": "background.jpg",
+        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihYIiD4MDmYAoDBVYhDd2GCsX-zGiBVVf4JRhDtKr_kgpCcVJpouiOeKXC0OR0p3n9LOzIf0ZHNSs7R3fIFXDByMwdZywRlApV4=s1600-rw-v1",
         "title": "Personalized Object Recognition",
         "date": "13 Jun 2024",
         "info": "Azure cloud web app which allows a user to teach and recognize any personal objects using CLIP and vector search.",
@@ -22,10 +22,10 @@
     {
         "id": "nexus",
         "category": "App",
-        "image": "background.jpg",
-        "title": "Nexus - mobile app for graoh analysis",
+        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZjcZweyk7CaA3X_IqW9mtEe_8rsQJ7_CnvsHwAF9uWsYtbelImL9-OJrwFc60FMyBZfcsswQ8K1vOISfpD8Tr3JIyx8HPzbPI=s1600-rw-v1",
+        "title": "Nexus - mobile app for graph analysis",
         "date": "6 Jul 2024 ",
-        "info": "A react native app for graph analysis and visualization",
+        "info": "A knowledge management app for graph analysis and visualization",
         "tags": ["app", "graph-analysis", "react native"],
         "hidden": false
     },
@@ -47,7 +47,7 @@
         "date": "TBA",
         "info": "TBA",
         "tags": ["TBA"],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "TBA",
@@ -57,7 +57,7 @@
         "date": "TBA",
         "info": "TBA",
         "tags": ["TBA"],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "TBA",
@@ -67,7 +67,7 @@
         "date": "TBA",
         "info": "TBA",
         "tags": ["TBA"],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "TBA",
@@ -77,7 +77,7 @@
         "date": "TBA",
         "info": "TBA",
         "tags": ["TBA"],
-        "hidden": false
+        "hidden": true
     },
     {
         "id": "TBA",
@@ -87,6 +87,6 @@
         "date": "TBA",
         "info": "TBA",
         "tags": ["TBA"],
-        "hidden": false
+        "hidden": true
     }
 ]

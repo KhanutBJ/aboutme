@@ -2,7 +2,7 @@
     {
         "id": "profile",
         "content": {
-            "name": "Khanut Boonjong (NOT UPDATED)",
+            "name": "Khanut Boonjong (TO BE UPDATED)",
             "phone": "+66 (0) 95-631-6993",
             "location": "Bangkok, Thailand",
             "email": "khanut.boo@student.mahidol.ac.th",
@@ -12,46 +12,34 @@
     },
     {
         "id": "objective",
-        "content": "Medical Student with X+ years of experience in XXX, seeking full-time XXX roles."
+        "content": "A medical student with a passion in neuroscience, AI,  and technology. Aiming to leverage tech skills to solve challenges in the medical field"
     },
     {
         "id": "skills",
         "content": [
-            { "category": "Technical Skills", "skills": ["A", "B", "C", "D"] },
-            { "category": "Soft Skills", "skills": ["A", "B", "C", "D"] },
-            { "category": "XYZ", "skills": ["A", "B", "C", "D"] }
+            { "category": "Technical Skills", "skills": ["Python/Flask", "ML/DL", "Statistics & Data analysis", "Basic Web development — HTML, CSS, Javascript", "Basic app development — React Native "] },
+            { "category": "Soft Skills", "skills": ["Adaptability", "Teamwork", "Communication"] },
+            { "category": "Engineering", "skills": ["Signal Processing"] }
         ]
     },
     {
         "id": "education",
         "content": [
-            { "degree": "Master of Computer Science", "institution": "Stanford University", "period": "Expected 2020", "coursework": ["A", "B", "C", "D"] },
-            { "degree": "Bachelor of Computer Science", "institution": "Stanford University", "period": "2014 - 2017" }
+            { "degree": "Doctor of Medicine", "institution": "Ramathibodi Hospital, Mahidol University", "period": "Expected 2030" },
+            { "degree": "Master of Biomedical Engineering", "institution": "Mahidol University", "period": "Expected 2030" }
         ]
     },
     {
         "id": "experience",
         "content": [
             {
-                "role": "Role Name",
-                "period": "Jan 2017 - Jan 2019",
-                "company": "Company Name",
-                "location": "San Francisco, CA",
+                "role": "Intern",
+                "period": "Jan 2023 - July 2023",
+                "company": "vidyasirimedhi institute of science and technology (VISTEC)",
+                "location": "Rayong, Thailand",
                 "responsibilities": [
-                    "Achieved X% growth for XYZ using A, B, and C skills.",
-                    "Led XYZ which led to X% of improvement in ABC",
-                    "Developed XYZ that did A, B, and C using X, Y, and Z."
-                ]
-            },
-            {
-                "role": "Role Name",
-                "period": "Jan 2017 - Jan 2019",
-                "company": "Company Name",
-                "location": "San Francisco, CA",
-                "responsibilities": [
-                    "Achieved X% growth for XYZ using A, B, and C skills.",
-                    "Led XYZ which led to X% of improvement in ABC",
-                    "Developed XYZ that did A, B, and C using X, Y, and Z."
+                    "Perform signal processing on IMU signals which includes noise filtering and feature extraction",
+                    "Develop Ramdom Forest model which recognize walk activity of the elderly"
                 ]
             }
         ]
@@ -60,29 +48,43 @@
         "id": "projects",
         "content": [
             {
-                "title": "Hiring Search Tool",
-                "description": "Built a tool to search for Hiring Managers and Recruiters by using ReactJS, NodeJS, Firebase and boolean queries. Over 25000 people have used it so far, with 5000+ queries being saved and shared, and search results even better than LinkedIn!",
-                "link": "https://hiring-search.careerflow.ai/"
+                "title": "Scalable Open-vocabulary Imagined Speech BCI System",
+                "description": "Led the team and design system to recognize imagined speech which aimed to solve low accuracy problem in previous ML works and is intended to help people with speech loss. This project won the first place in the ALS track (business problem statement by SCG WEDO) of Brain Hackathon 2024",
+                "link": "link"
             },
             {
-                "title": "Short Project Title",
-                "description": "Build a project that does something and had quantified success using A, B, and C. This project's description spans two lines and also won an award."
+                "title": "A Cloud solution for personalized object recognition",
+                "description": "Built an Azure cloud solution that enables blind and visually-impaired individuals to teach and recognize personal items, which are typically beyond the capabilities of general object recognition models. This project was selected for presentation in the final round of Microsoft Thailand's AI for Accessibility Hackathon 2024."
             },
             {
-                "title": "Short Project Title",
-                "description": "Build a project that does something and had quantified success using A, B, and C. This project's description spans two lines and also won an award."
+                "title": "Graph Theoretical Analysis on Multi-order Functional Brain Network of ADHD",
+                "description": "Analyzed the functional brain network from fMRI signals of ADHD patients using graph theory and machine learning. This project was presented and won third place in Brain Code Camp poster presentations."
+            },
+            {
+                "title": "CNN for classifying migraine from EEG signals",
+                "description": "Built a CNN model to classify migraine from EEG signals. This project was a capstone prohect for graduation from AI Builders program by VISTEC/VISAI & Central Retail Digital"
+            },
+
+            {
+                "title": "Nexus: a knowledge management app dedicated for learning insights from graph",
+                "description": "Built a mobile app to store knowledge on graph and gain insights from graoh metrics by using React Native. With user base of [TBA]",
+                "link": "link"
+            },
+            {
+                "title": "Daily Brainy",
+                "description": "Built an automated system that edits and posts short videos about neuroscience daily on social media using Python which have about 2000 followers on Instagram"
             }
         ]
     },
     {
-        "id": "extra-curricular",
+        "id": "extra-curricular [TBA]",
         "content": [
             "Actively write <a href=\"https://www.faangpath.com/blog/\">blog posts</a> and social media posts (<a href=\"https://www.tiktok.com/@faangpath\">TikTok</a>, <a href=\"https://www.instagram.com/faangpath/?hl=en\">Instagram</a>) viewed by over 20K+ job seekers per week to help people with best practices to land their dream jobs.",
             "Sample bullet point."
         ]
     },
     {
-        "id": "leadership",
+        "id": "leadership [TBA]",
         "content": [
             "Admin for the <a href=\"https://discord.com/invite/WWbjEaZ\">FAANGPath Discord community</a> with over 6000+ job seekers and industry mentors. Actively involved in facilitating online events, career conversations, and more alongside other admins and a team of volunteer moderators!"
         ]

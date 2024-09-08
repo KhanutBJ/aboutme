@@ -84,6 +84,13 @@
         .skills-table th,
         .skills-table td {
             padding: calc(0.1em * var(--scale));
+            /* white-space: nowrap;  */
+            /* overflow: hidden;  */
+            /* text-overflow: ellipsis;  */
+        }
+
+        .skills-table td {
+            min-width: 100px; 
         }
 
         .experience ul,
@@ -194,7 +201,7 @@
         <h2>PROJECTS</h2>
         <div id="projects"></div>
     </div>
-
+<!-- 
     <div class="section" id="extra-curricular">
         <h2>EXTRA-CURRICULAR ACTIVITIES</h2>
         <ul></ul>
@@ -203,7 +210,7 @@
     <div class="section" id="leadership">
         <h2>LEADERSHIP</h2>
         <ul></ul>
-    </div>
+    </div> -->
 </body>
 
 <div class="preview-container">
@@ -298,7 +305,7 @@
             projectsContent.forEach(proj => {
                 const projDiv = document.createElement('div');
                 projDiv.classList.add('project-item');
-                projDiv.innerHTML = `<h3>${proj.title}.</h3><p>${proj.description} <a href="${proj.link}">(Try it here)</a></p>`;
+                projDiv.innerHTML = `<h3>${proj.title}.</h3><p>${proj.description} <a href="${proj.link}">(link)</a></p>`;
                 projectsContainer.appendChild(projDiv);
             });
 
